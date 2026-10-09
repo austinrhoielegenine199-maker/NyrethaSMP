@@ -1,0 +1,43 @@
+gui:
+  title: "&8ғʟᴀᴋᴇs"
+  rows: 4
+  enabled: true
+
+background:
+  fill: false
+  material: "GRAY_STAINED_GLASS_PANE"
+  name: ""
+  lore: []
+  slots: 0-8
+
+items:
+  gems-balance:
+    material: "AMETHYST_CLUSTER"
+    name: "&#099bffғʟᴀᴋᴇs"
+    lore:
+      - "&fClick to pay"
+    slot: 13
+  close:
+    material: "RED_STAINED_GLASS_PANE"
+    name: "&#FF0000ᴄʟᴏꜱᴇ"
+    lore:
+      - "&fClick to return"
+    slot: 27
+  back-page:
+    material: "ARROW"
+    name: "&#00fc88ᴘʀᴇᴠɪᴏᴜꜱ"
+    lore:
+      - "&fClick to go to the previous page"
+    slot: 30
+  refresh:
+    material: "ANVIL"
+    name: "&#099bffғʟᴀᴋᴇs"
+    lore:
+      - "&fClick to refresh"
+    slot: 31
+  next-page:
+    material: "ARROW"
+    name: "&#00fc88ɴᴇxᴛ"
+    lore:
+      - "&fClick to go to the next page"
+    slot: 32
