@@ -122,6 +122,8 @@ public final class Team extends JavaPlugin implements Listener {
                 if (home == null) { msg(p, "team.no-team-home"); return true; }
                 p.teleport(home); msg(p, "team.teleport-completed");
             }
+            case "gui", "menu" -> new com.nyretha.teams.GUI.TeamGUI(this).open(p);
+            case "members" -> new com.nyretha.teams.GUI.MemberManagerGUI(this).open(p);
             case "chat" -> {
                 if (current == null) { msg(p, "errors.not-in-team"); return true; }
                 boolean enabled = !isTeamChatEnabled(p); setTeamChatEnabled(p, enabled);
