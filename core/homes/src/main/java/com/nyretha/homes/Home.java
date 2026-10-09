@@ -40,6 +40,7 @@ public final class Home extends JavaPlugin implements Listener {
 
     public void openHomesGUI(Player player) {
         Inventory inv = Bukkit.createInventory(null, 36, HOMES_TITLE);
+        inv.setItem(19, item(Material.BLUE_DYE, "&bʀᴇɴᴀᴍᴇ ᴛᴇᴀᴍ ʜᴏᴍᴇ", "&fClick to rename your team home"));
         for (int i = 0; i < BED_SLOTS.length; i++) {
             Location home = getHome(player, i);
             if (home == null) {
