@@ -39,7 +39,7 @@ public final class TeamHomeButtonListener implements Listener {
     private static final int CONFIRM_SLOT = 16;
     private static final String CONFIRM_TITLE = color("&8ᴛᴇᴀᴍ ʜᴏᴍᴇ");
     private final JavaPlugin plugin;
-    private final Map<UUID, String> pendingRename = new java.util.HashMap<>();
+    private final Map<UUID, String> pendingRename = new java.util.concurrent.ConcurrentHashMap<>();
 
     public TeamHomeButtonListener(JavaPlugin plugin) { this.plugin = plugin; }
 
