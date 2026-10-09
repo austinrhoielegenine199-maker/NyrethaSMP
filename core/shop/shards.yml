@@ -2,11 +2,11 @@ shards-enabled: true
 main-menu:
   slot: 15
   material: AMETHYST_SHARD
-  displayname: '&#009bffғʟᴀᴋᴇ ꜱʜᴏᴘ'
+  displayname: '&#099bffғʟᴀᴋᴇ ꜱʜᴏᴘ'
   lore:
-    - '&fClick to view the &#009bffғʟᴀᴋᴇ shop'
+    - '&fClick to view the &#099bffғʟᴀᴋᴇ shop'
 shard-shop:
-  gui-title: '&8ѕʜᴏᴘ - &#009bffғʟᴀᴋᴇ ꜱʜᴏᴘ'
+  gui-title: '&8ѕʜᴏᴘ - &#099bffғʟᴀᴋᴇ ꜱʜᴏᴘ'
   rows: 3
   back-button-slot: 18
 items:
@@ -18,7 +18,7 @@ items:
     price: 200
     slot: 3
     amount: 1
-    lore: ['&fBuy Price: &#009bff200x &#009bffғʟᴀᴋᴇ']
+    lore: ['&fBuy Price: &#099bff200x &#099bffғʟᴀᴋᴇs']
   crimson-key:
     displayname: '&4ᴄʀɪᴍꜱᴏɴ ᴋᴇʏ'
     material: TRIPWIRE_HOOK
@@ -27,7 +27,7 @@ items:
     price: 2500
     slot: 4
     amount: 1
-    lore: ['&fBuy Price: &#009bff2500x &#009bffғʟᴀᴋᴇ']
+    lore: ['&fBuy Price: &#099bff2500x &#099bffғʟᴀᴋᴇs']
   prime-key:
     displayname: '&3ᴘʀɪᴍᴇ ᴋᴇʏ'
     material: TRIPWIRE_HOOK
@@ -36,7 +36,7 @@ items:
     price: 2000
     slot: 5
     amount: 1
-    lore: ['&fBuy Price: &#009bff2000x &#009bffғʟᴀᴋᴇ']
+    lore: ['&fBuy Price: &#099bff2000x &#099bffғʟᴀᴋᴇs']
   pig-spawner:
     displayname: '&dSpawner'
     material: SPAWNER
@@ -45,7 +45,7 @@ items:
     price: 1500
     slot: 9
     amount: 1
-    lore: ['&ePig', '&fBuy Price: &#009bff1500x &#009bffғʟᴀᴋᴇ']
+    lore: ['&ePig', '&fBuy Price: &#099bff1500x &#099bffғʟᴀᴋᴇs']
   cow-spawner:
     displayname: '&dSpawner'
     material: SPAWNER
@@ -54,7 +54,7 @@ items:
     price: 1500
     slot: 10
     amount: 1
-    lore: ['&eCow', '&fBuy Price: &#009bff1500x &#009bffғʟᴀᴋᴇ']
+    lore: ['&eCow', '&fBuy Price: &#099bff1500x &#099bffғʟᴀᴋᴇs']
   zombie-spawner:
     displayname: '&dSpawner'
     material: SPAWNER
@@ -63,7 +63,7 @@ items:
     price: 1500
     slot: 11
     amount: 1
-    lore: ['&eZombie', '&fBuy Price: &#009bff1500x &#009bffғʟᴀᴋᴇ']
+    lore: ['&eZombie', '&fBuy Price: &#099bff1500x &#099bffғʟᴀᴋᴇs']
   spider-spawner:
     displayname: '&dSpawner'
     material: SPAWNER
@@ -72,7 +72,7 @@ items:
     price: 1500
     slot: 12
     amount: 1
-    lore: ['&eSpider', '&fBuy Price: &#009bff1500x &#009bffғʟᴀᴋᴇ']
+    lore: ['&eSpider', '&fBuy Price: &#099bff1500x &#099bffғʟᴀᴋᴇs']
   skeleton-spawner:
     displayname: '&dSpawner'
     material: SPAWNER
@@ -81,7 +81,7 @@ items:
     price: 1500
     slot: 13
     amount: 1
-    lore: ['&eSkeleton', '&fBuy Price: &#009bff1500x &#009bffғʟᴀᴋᴇ']
+    lore: ['&eSkeleton', '&fBuy Price: &#099bff1500x &#099bffғʟᴀᴋᴇs']
   creeper-spawner:
     displayname: '&dSpawner'
     material: SPAWNER
@@ -90,7 +90,7 @@ items:
     price: 1500
     slot: 14
     amount: 1
-    lore: ['&eCreeper', '&fBuy Price: &#009bff1500x &#009bffғʟᴀᴋᴇ']
+    lore: ['&eCreeper', '&fBuy Price: &#099bff1500x &#099bffғʟᴀᴋᴇs']
   zombified-piglin-spawner:
     displayname: '&dSpawner'
     material: SPAWNER
@@ -99,7 +99,7 @@ items:
     price: 1500
     slot: 15
     amount: 1
-    lore: ['&eZombified Piglin', '&fBuy Price: &#009bff1500x &#009bffғʟᴀᴋᴇ']
+    lore: ['&eZombified Piglin', '&fBuy Price: &#099bff1500x &#099bffғʟᴀᴋᴇs']
   blaze-spawner:
     displayname: '&dSpawner'
     material: SPAWNER
@@ -108,7 +108,7 @@ items:
     price: 1500
     slot: 16
     amount: 1
-    lore: ['&eBlaze', '&fBuy Price: &#009bff1500x &#009bffғʟᴀᴋᴇ']
+    lore: ['&eBlaze', '&fBuy Price: &#099bff1500x &#099bffғʟᴀᴋᴇs']
   iron_golem-spawner:
     displayname: '&dSpawner'
     material: SPAWNER
@@ -117,4 +117,4 @@ items:
     price: 1500
     slot: 17
     amount: 1
-    lore: ['&eIron Golem', '&fBuy Price: &#009bff1500x &#009bffғʟᴀᴋᴇ']
+    lore: ['&eIron Golem', '&fBuy Price: &#099bff1500x &#099bffғʟᴀᴋᴇs']
