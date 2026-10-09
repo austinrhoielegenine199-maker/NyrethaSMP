@@ -1,0 +1,42 @@
+# Level-system settings
+currency: "VAULT" # DonutFlakes or VAULT
+enabled: true
+max-level: 100
+announce_level_ups: true
+message:
+  - "&#099bff🔥 &#099bff&lFLAKE LEVEL &#099bff🔥"
+  - ""
+  - "&#00FF00%player% &fnow has &#099bffFlake level %flakes_level%&f!"
+  - ""
+  - "&fFlake level ➟ &f&n/flakes upgrade"
+
+next:
+  next-message: true
+  next-flake-in: "&7Next Flake in &#099bff%flakes_next_flake%"
+
+area-join:
+  module:
+    chat:
+      enabled: false
+      message:
+        - ""
+    actionbar:
+      enabled: false
+      message:
+        - ""
+    title:
+      enabled: true
+      message:
+        - "&#099bffᴀꜰᴋ"
+    subtitle:
+      enabled: true
+      message:
+        - "&fEarn one Flake per minute"
+
+level-settings:
+  flakes-added: "&7You received &#099bff+%flakes_added% Flakes!"
+  level_up_message: "&#00FF00You upgraded your Flake level to &#099bff%flakes_level%&#00FF00!"
+  more-flakes-per-upgrade: 1
+  default-flakes-per-minute: 1
+  base_cost: "100k"
+  cost_multiplier: "25%"
