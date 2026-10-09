@@ -1,0 +1,39 @@
+shards-enabled: true
+main-menu:
+  slot: 15
+  material: AMETHYST_SHARD
+  displayname: '&#009bffғʟᴀᴋᴇ ꜱʜᴏᴘ'
+  lore:
+    - '&fClick to view the &#009bffғʟᴀᴋᴇ shop'
+shard-shop:
+  gui-title: '&8ѕʜᴏᴘ - &#009bffғʟᴀᴋᴇ ꜱʜᴏᴘ'
+  rows: 3
+  back-button-slot: 18
+items:
+  common-key:
+    displayname: '&2ᴄᴏᴍᴍᴏɴ ᴋᴇʏ'
+    material: TRIPWIRE_HOOK
+    take-command: 'gems take %player% %price%'
+    give-command: 'crate givekey %player% common virtuell 1'
+    price: 200
+    slot: 3
+    amount: 1
+    lore: ['&fBuy Price: &#009bff200x &#009bffғʟᴀᴋᴇ']
+  crimson-key:
+    displayname: '&4ᴄʀɪᴍꜱᴏɴ ᴋᴇʏ'
+    material: TRIPWIRE_HOOK
+    take-command: 'gems take %player% %price%'
+    give-command: 'crate givekey %player% crimson virtuell 1'
+    price: 2500
+    slot: 4
+    amount: 1
+    lore: ['&fBuy Price: &#009bff2500x &#009bffғʟᴀᴋᴇ']
+  prime-key:
+    displayname: '&3ᴘʀɪᴍᴇ ᴋᴇʏ'
+    material: TRIPWIRE_HOOK
+    take-command: 'gems take %player% %price%'
+    give-command: 'crate givekey %player% prime virtuell 1'
+    price: 2000
+    slot: 5
+    amount: 1
+    lore: ['&fBuy Price: &#009bff2000x &#009bffғʟᴀᴋᴇ']
