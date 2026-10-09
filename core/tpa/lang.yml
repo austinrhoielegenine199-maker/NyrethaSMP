@@ -1,0 +1,82 @@
+# TPA module messages
+# Placeholders: %player%, %time%, %count%
+prefix-enable: false
+prefix: "&#00f986ᴛᴘᴀ &7»"
+
+messages:
+  no-permission: "&cYou don't have permission to do that!"
+  player-only: "&cOnly players can use this command!"
+  player-offline: "&cThat player is not online!"
+  tpahere-sent: "&fTPA HERE request sent to &#00f986%player%&f!"
+  self-request: "&cYou cannot send a TPA request to yourself!"
+  player-disabled: "&cThis player has disabled TPA requests!"
+  player-disabled-tpahere: "&cThis player has disabled TPA HERE requests!"
+  sender-offline: "&fThe player who sent the request is no longer online!"
+  no-pending-requests: "&cYou have no pending TPA requests!"
+  no-requests-to-cancel: "&cYou have no TPA requests to cancel!"
+  reload-success: "&aTPA has been reloaded!"
+  tpa-sent: "&fTPA request sent to &#00f986%player%&f!"
+  tpahere-received: "&fPlayer &#00f986%player% &fwants you to teleport to them!"
+  request-expired-sender: "&fYour TPA request to &#00f986%player% &fhas expired!"
+  request-expired-receiver: "&fThe TPA request from &#00f986%player% &fhas expired!"
+  request-cancelled-receiver: "&fPlayer &#00f986%player% &fcancelled their TPA request!"
+  request-accepted: "&fYou accepted the TPA request!"
+  request-denied: "&cYou denied the TPA request!"
+  request-cancelled: "&fYou cancelled the TPA request!"
+  teleported-to-sender: "&fYou were teleported to &#00f986%player%&f!"
+  target-teleported-to-you: "&fPlayer &#00f986%player% &fwas teleported to you!"
+  tpa-enabled: "&fYou have &#00FF00enabled&f TPA requests!"
+  tpa-disabled: "&fYou have &#FF0000disabled&f TPA requests!"
+  tpahere-disabled: "&fYou have &#FF0000disabled&f TPA HERE requests!"
+  tpahere-enabled: "&fYou have &#00FF00enabled&f TPA HERE requests!"
+  teleport-started: "&fTeleporting in &b%count% &fseconds"
+  teleport-cancelled: "&cTeleport cancelled!"
+  already-teleporting: "&cYou are already being teleported!"
+  tpa-received-clickable: "&fPlayer &a%player% &fwants to teleport to you!"
+  tpahere-received-clickable: "&fPlayer &a%player% &fwants you to teleport to them!"
+  clickable-accept: "&a&lACCEPT"
+  clickable-accept-hover: "&fClick to accept the TPA request"
+  clickable-deny: "&c&lDENY"
+  clickable-deny-hover: "&fClick to deny the TPA request"
+  tpa-gui-enabled: "&fYou have &#00FF00enabled&f the TPA GUI!"
+  tpa-gui-disabled: "&fYou have &#FF0000disabled&f the TPA GUI!"
+  tpahere-gui-enabled: "&fYou have &#00FF00enabled&f the TPA HERE GUI!"
+  tpahere-gui-disabled: "&fYou have &#FF0000disabled&f the TPA HERE GUI!"
+  tpa-auto-enabled: "&fYou have &#00FF00enabled&f auto-accept for TPA requests!"
+  tpa-auto-disabled: "&fYou have &#FF0000disabled&f auto-accept for TPA requests!"
+  tpa-auto-accepted-target: "&fYou have auto-accepted the TPA request from &#00f986%player%&f!"
+  tpa-auto-accepted: "&fYour TPA request to &#00f986%player%&f was automatically accepted!"
+  tpahere-auto-enabled: "&fYou have &#00FF00enabled&f auto-accept for TPA HERE requests!"
+  tpahere-auto-disabled: "&fYou have &#FF0000disabled&f auto-accept for TPA HERE requests!"
+  tpahere-auto-accepted-target: "&fYou have auto-accepted the TPA HERE request from &#00f986%player%&f!"
+  tpahere-auto-accepted: "&fYour TPA HERE request to &#00f986%player%&f was automatically accepted!"
+
+action-bars:
+  reload-success: "&aTPA has been reloaded!"
+  request-accepted: "&fYou accepted the TPA request!"
+  request-denied: "&cYou denied the TPA request!"
+  request-cancelled: "&fYou cancelled the TPA request!"
+  request-received: "&fNew TPA! &#00FF00/tpaccept &for &#FF0000/tpadeny"
+  teleported-to-sender: "&fYou were teleported to &#00f986%player%&f!"
+  target-teleported-to-you: "&fPlayer &#00f986%player% &fwas teleported to you!"
+  teleport-started: "&fTeleporting in &b%count% &fseconds"
+  teleport-cancelled: "&cTeleport cancelled!"
+  already-teleporting: "&cYou are already being teleported!"
+
+command-usage: |
+  &#00f986&lTPA
+  &#00f986➤ &f/tpa <player>
+  &#00f986➤ &f/tpahere <player>
+  &#00f986➤ &f/tpaccept
+  &#00f986➤ &f/tpadeny
+  &#00f986➤ &f/tpacanel
+  &#00f986➤ &f/tpatoggle
+  &#00f986➤ &f/tpaheretoggle
+  &#00f986➤ &f/tpagui
+  &#00f986➤ &f/tpaheregui
+  &#00f986➤ &f/tpaauto
+  &#00f986➤ &f/tpahereauto
+
+admin-command-usage: |
+  &#00f986&lTPA ADMIN
+  &#00f986➤ &f/tpareload
