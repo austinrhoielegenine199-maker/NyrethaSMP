@@ -2,7 +2,6 @@ package de.elivb.teams.api;
 
 import java.lang.reflect.Method;
 import org.bukkit.Location;
-import org.bukkit.plugin.Plugin;
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.java.JavaPlugin;
 
