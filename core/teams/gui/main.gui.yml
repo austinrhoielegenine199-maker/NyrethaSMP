@@ -1,0 +1,10 @@
+title: "&8Team Menu"
+size: 27
+items:
+  info:
+    slot: 13
+    material: BOOK
+    name: "&a%team%"
+    lore:
+      - "&7Leader: &f%leader%"
+      - "&7Members: &f%members%"
