@@ -1,0 +1,38 @@
+plugin-reloaded: "&#0bf52bPlugin reloaded!"
+player-only: "You must be a player to use this command!"
+player-not-found: "&#FF0000Player not found!"
+invalid-amount: "&#FF0000Invalid amount!"
+tool-given-to-other: "&#22C45B&l{tool_name} &fgiven to &#FF0000{player}&f!"
+tool-received-from-other: "&#22C45B&l{tool_name} &freceived&f!"
+tool-not-found: "&#FF0000Tool not found!"
+tool-received: "&#22C45B&l{tool_name} &freceived!"
+error-config-save: "&#FF0000&lERROR &7» &fConfiguration could not be saved"
+config-created: "Configuration created!"
+inventory-full: '&#FF0000Your inventory is full!'
+region-protected: "&#FF0000You cannot use tools in protected regions!"
+no-permission: "&#FF0000You don't have permission to use this command!"
+error-command-not-found: "&cCommand 'tool' not found in plugin.yml!"
+tool-broken: "&#FF0000Your {tool_name} has broken!"
+tool-expired: "&#FF0000Your {tool_name} has expired!"
+enderpearl-cooldown: "&#FF0000You must wait before using another ender pearl!"
+rocket-needs-elytra: "&#FF0000You need to wear an &6Elytra &#FF0000to use this rocket!"
+rocket-not-gliding: "&#FF0000You need to be gliding with an Elytra to use this rocket!"
+plot-protected: "&#FF0000You cannot use tools in protected plots!"
+tool-given-custom: "&#22C45B&l{tool_name} &f({mode}: {value}) &fgiven to &f{player}"
+tool-received-custom: "&#22C45B&l{tool_name} &f({mode}: {value}) &freceived!"
+mode-uses: "Uses"
+mode-time: "Time"
+mode-infinite: "Infinite"
+water-in-nether: "&#FF0000You cannot place water in the Nether!"
+jump-cooldown: "&#FF0000You must wait before using another jump!"
+command-usage: |
+  &#FF0000&lTOOLS
+  &#FF0000➤ &f/tool give <tool>
+  &#FF0000➤ &f/tool give <player> <tool> <amount>
+  &#FF0000➤ &f/tool items
+  &#FF0000➤ &f/tool reload
+  &#FF0000➤ &f/tool help for this message
+blacklist-blocks:
+  - "BEDROCK"
+  - "BARRIER"
+  - "SPAWNER"
