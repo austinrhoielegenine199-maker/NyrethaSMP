@@ -1,0 +1,15 @@
+name: NyrethaTeams
+version: '1.8'
+main: com.nyretha.teams.Team
+api-version: '1.21'
+description: NyrethaSMP team system
+folia-supported: true
+softdepend: [PlaceholderAPI]
+commands:
+  team:
+    aliases: [teams]
+permissions:
+  team.admin:
+    default: op
+  team.home.bypass:
+    default: false
