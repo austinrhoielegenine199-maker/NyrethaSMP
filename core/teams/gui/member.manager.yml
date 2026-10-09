@@ -1,0 +1,8 @@
+title: "&8Team Members"
+size: 54
+items:
+  member:
+    material: PLAYER_HEAD
+    name: "&a%player%"
+    lore:
+      - "&7Team member"
