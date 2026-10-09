@@ -2,6 +2,7 @@ package de.elivb.teams.api;
 
 import java.lang.reflect.Method;
 import org.bukkit.Location;
+import org.bukkit.plugin.Plugin;
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.java.JavaPlugin;
 
@@ -37,8 +38,14 @@ public final class TeamHomeApi {
     }
 
     public boolean teleportToTeamHome(Player player) {
-        Location home = getTeamHome(player);
-        return home != null && home.getWorld() != null && player.teleport(home);
+        if (!hasTeamHome(player)) return false;
+        try {
+            Object homeManager = invoke(plugin, "getTeamHome");
+            Object result = invoke(homeManager, "teleportToHome", player);
+            return !(result instanceof Boolean) || (Boolean) result;
+        } catch (ReflectiveOperationException ignored) {
+            return false;
+        }
     }
 
     private Object getTeam(Player player) {
