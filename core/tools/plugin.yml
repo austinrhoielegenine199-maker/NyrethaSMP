@@ -1,0 +1,12 @@
+name: NyrethaTools
+version: '3.3'
+main: com.nyretha.tools.Tools
+api-version: '1.21'
+description: NyrethaSMP custom tools module
+softdepend: [WorldGuard]
+folia-supported: true
+
+commands:
+  tool:
+    aliases: [tools, dt]
+    permission: tools.admin
