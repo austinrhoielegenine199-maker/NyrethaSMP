@@ -1,0 +1,50 @@
+# User-facing currency text uses the blue Flake name. Command names, message keys, and placeholders are kept compatible.
+prefix-enable: true
+prefix: "&#099bffғʟᴀᴋᴇs &7» "
+
+no-permission: '&cYou have no permission for that!'
+player-only: 'Only Players can use this command!'
+player-not-found: "&cPlayer not found"
+reload-success: '&#00FF00Flakes reloaded successfully!'
+invalid-number: "&cInvalid number!"
+not-enough-shards: "&cYou do not have enough &#099bffғʟᴀᴋᴇs!"
+not-enough-money: "&cYou do not have enough money!"
+max-level-reached: "&cYou reached the max Flake level!"
+self-pay: "&cYou can’t give yourself Flakes!"
+economy-not-available: "&cThe economy system is not available!"
+
+booster-item-received: "&fYou received a &#099bff%amount%x Flake Booster for &#099bff%time% &fhours!"
+booster-expired: "&cYour Flake Booster has expired!"
+booster-activated: "&fYour Flake Booster is now active for &#099bff%time%&f hours!"
+booster-remaining: "&fYour Flake Booster is active for another &#099bff%time%&f!"
+
+gui-updated: "&aFlakes GUI reloaded successfully!"
+send-shards-chat-input: |
+  &cPlease write the amount in chat,
+  &cor type cancel to cancel the input!
+send-shards-chat-cancel: "&cInput cancelled!"
+
+shards-balance: "&fBalance: &#099bff%shards% ғʟᴀᴋᴇs"
+shards-balance-other: "&#00FF00%target% &fhas &#099bff%shards% ғʟᴀᴋᴇs&f!"
+shards-send: "&fYou sent &#099bff%shards_send% ғʟᴀᴋᴇs &fto &#00FF00%player%"
+shards-received: "&fYou received &#099bff%shards_received% ғʟᴀᴋᴇs &ffrom &#00FF00%target_player%"
+shards-given: "&fYou gave &#099bff%shards_given% ғʟᴀᴋᴇs &fto &#00FF00%player%!"
+shards-taken: "&fYou took &#099bff%shards_taken% ғʟᴀᴋᴇs &ffrom &#00FF00%player%!"
+shards-set: "&fYou set &#00FF00%player%&f's balance to &#099bff%shards_set% ғʟᴀᴋᴇs!"
+clear-all-success: "&aSuccessfully cleared all Flakes and levels from all players!"
+
+command-usage: |
+  &#099bff&lFLAKES
+  &#099bff➤ &f/shards
+  &#099bff➤ &f/shards pay <player> <amount>
+  &#099bff➤ &f/shards bal <player>
+  &#099bff➤ &f/shards upgrade
+
+command-usage-admin: |
+  &#FF0000&lFLAKES ADMIN
+  &#FF0000➤ &f/shards reload
+  &#FF0000➤ &f/shards give <player> <amount>
+  &#FF0000➤ &f/shards take <player> <amount>
+  &#FF0000➤ &f/shards set <player> <amount>
+  &#FF0000➤ &f/shards booster <player> <time> <amount>
+  &#FF0000➤ &f/shards clear all-players
