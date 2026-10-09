@@ -20,6 +20,7 @@ import org.bukkit.event.inventory.ClickType;
 import org.bukkit.event.inventory.InventoryClickEvent;
 import org.bukkit.event.inventory.InventoryOpenEvent;
 import org.bukkit.event.player.PlayerQuitEvent;
+import org.bukkit.event.player.AsyncPlayerChatEvent;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
@@ -136,43 +137,64 @@ public final class TeamHomeButtonListener implements Listener {
         String inputApi = plugin.getConfig().getString("team-home.rename-input", "ChatAPI");
         String oldName = getStoredHomeName(state, player);
         pendingRename.put(player.getUniqueId(), state.teamName);
-        BiConsumer<Player, String> callback = (renamer, input) -> {
-            String newName = input == null ? "" : input.trim();
-            String teamName = pendingRename.remove(renamer.getUniqueId());
-            if (teamName == null || newName.isEmpty()) {
-                renamer.sendMessage(color("&cTeam home name was not changed."));
-                return;
-            }
-            if (newName.length() > 32) {
-                renamer.sendMessage(color("&cTeam home name must be 32 characters or fewer."));
-                return;
-            }
-            Plugin teams = Bukkit.getPluginManager().getPlugin("Teams");
-            if (teams == null || !teams.isEnabled()) return;
-            try {
-                FileConfiguration cfg = (FileConfiguration) call(teams, "getConfig");
-                cfg.set("team-home.display-names." + teamName, newName);
-                call(teams, "saveConfig");
-                renamer.sendMessage(color("&aTeam home renamed to &b" + newName + "&a."));
-                if (isHomesInventory(renamer.getOpenInventory().getTitle())) {
-                    updateButton(renamer, renamer.getOpenInventory().getTopInventory());
-                }
-            } catch (ReflectiveOperationException ex) {
-                renamer.sendMessage(color("&cCould not save the team home name."));
-            }
-        };
 
-        try {
-            if ("SignAPI".equalsIgnoreCase(inputApi)) {
+        if ("SignAPI".equalsIgnoreCase(inputApi)) {
+            BiConsumer<Player, String> callback = (renamer, input) ->
+                    saveRenamedHome(renamer, input, pendingRename.remove(renamer.getUniqueId()));
+            try {
                 Object signManager = call(plugin, "getSignManager");
                 call(signManager, "openSignEditor", player, oldName, callback);
-            } else {
-                Object chatManager = call(plugin, "getChatManager");
-                call(chatManager, "openChatEditor", player, "Enter a new name for your team home:", callback);
+            } catch (ReflectiveOperationException ex) {
+                pendingRename.remove(player.getUniqueId());
+                player.sendMessage(color("&cSignAPI is unavailable in this Homes build. Set team-home.rename-input to ChatAPI in config.yml."));
+            }
+            return;
+        }
+
+        player.closeInventory();
+        player.sendMessage(color("&bEnter the new Team Home name in chat. Type cancel to keep the current name."));
+        player.sendMessage(color("&7Current name: &f" + oldName));
+    }
+
+    @EventHandler
+    public void onRenameChat(AsyncPlayerChatEvent event) {
+        Player player = event.getPlayer();
+        if (!pendingRename.containsKey(player.getUniqueId())) return;
+        event.setCancelled(true);
+        String input = event.getMessage().trim();
+        String teamName = pendingRename.remove(player.getUniqueId());
+        if (input.equalsIgnoreCase("cancel")) {
+            player.sendMessage(color("&7Team Home rename cancelled."));
+            return;
+        }
+        Bukkit.getScheduler().runTask(plugin, () -> saveRenamedHome(player, input, teamName));
+    }
+
+    private void saveRenamedHome(Player player, String input, String teamName) {
+        String newName = input == null ? "" : input.trim();
+        if (teamName == null || newName.isEmpty()) {
+            player.sendMessage(color("&cTeam home name was not changed."));
+            return;
+        }
+        if (newName.length() > 32) {
+            player.sendMessage(color("&cTeam home name must be 32 characters or fewer."));
+            return;
+        }
+        Plugin teams = Bukkit.getPluginManager().getPlugin("Teams");
+        if (teams == null || !teams.isEnabled()) {
+            player.sendMessage(color("&cTeams plugin is not available."));
+            return;
+        }
+        try {
+            FileConfiguration cfg = (FileConfiguration) call(teams, "getConfig");
+            cfg.set("team-home.display-names." + teamName, newName);
+            call(teams, "saveConfig");
+            player.sendMessage(color("&aTeam home renamed to &b" + newName + "&a."));
+            if (isHomesInventory(player.getOpenInventory().getTitle())) {
+                updateButton(player, player.getOpenInventory().getTopInventory());
             }
         } catch (ReflectiveOperationException ex) {
-            pendingRename.remove(player.getUniqueId());
-            player.sendMessage(color("&cRename input is unavailable. Check team-home.rename-input in config.yml."));
+            player.sendMessage(color("&cCould not save the team home name."));
         }
     }
 
