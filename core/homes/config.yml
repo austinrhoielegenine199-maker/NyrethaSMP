@@ -15,3 +15,8 @@ block-world:
   - "world_example"
 block-world-guard:
   - "region_example"
+
+# Team Home integration with the optional Teams plugin
+team-home:
+  # Choose ChatAPI or SignAPI for right-click rename input.
+  rename-input: "ChatAPI"
