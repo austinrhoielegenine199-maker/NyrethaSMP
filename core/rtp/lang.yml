@@ -1,0 +1,90 @@
+# RTP module messages and action bars
+messages:
+  teleport-on-cooldown-message: '&cYou must wait %wait_time%s before you can teleport again.'
+  teleported-message: '&aSuccessfully teleported'
+  fail-message: '&cNo location found! &7(Not a /bug)'
+  no-world-permission-message: '&cThis world is not available!'
+  no-permission: "&cYou do not have permission to use this command!"
+  player-only: "&cThis command can only be used by players!"
+  teleporting-cancel-message: '&cCancelled!'
+  reload: "&aRTP has been reloaded!"
+  zone-enter-message: '&fYou entered the &c&lRTP &cZone&f!'
+  zone-leave-message: '&fYou left the &c&lRTP &cZone&f!'
+
+  # Queue messages
+  rtp-join-queue-title: '&a&lRTPQueue'
+  rtp-join-queue-sub-title: '&fYou are now in the &a&lRTPQueue'
+  rtp-join-queue-message: '&fYou joined the &a&lRTPQueue!'
+
+  rtp-first-join-queue-broadcast:
+    - '&f'
+    - '&a&l🗡 RTPQUEUE 🗡'
+    - '&f'
+    - '&a%player% &fis waiting for an opponent in the &aRTPQueue &7(%world%)'
+    - '&f'
+    - '&a&l♦ &7Join with &7&n/rtpqueue'
+    - '&f'
+
+  rtp-quit-queue-title: '&a&lRTPQueue'
+  rtp-quit-queue-sub-title: '&fYou left the &a&lRTPQueue'
+  rtp-quit-queue-message: '&fYou left the &a&lRTPQueue!'
+  rtp-queue-countdown-message: '&fFight starts in &a&l%seconds%s'
+  rtp-queue-countdown-title: '&a&lRTPQueue'
+  rtp-queue-countdown-sub-title: '&fTeleport in &a&l%seconds%s'
+  rtp-queue-teleporting-title: '&a&lRTPQueue'
+  rtp-queue-teleporting-sub-title: '&fYou have been teleported'
+  rtp-cannot-leave-match-found: '&cYou cannot leave the queue because a match has been found!'
+  rtp-cannot-leave-in-match: '&cYou cannot leave the queue because you are already in a match!'
+  rtp-already-in-match: '&cYou are already in a match! Wait until it is over.'
+  rtp-cooldown-message: '&cYou must wait before you can queue again!'
+  rtp-opponent-left: '&cYour opponent has left the game!'
+  rtp-match-ended: '&aYour match has ended. You can queue again now.'
+  zone-teleport-message: "&aYou have been teleported from the RTP Zone!"
+
+action-bars:
+  teleported-message: '&aSuccessfully teleported'
+  fail-message: '&cNo location found! &7(Not a /bug)'
+  reload: "&aRTP has been reloaded!"
+  teleporting-cancel-message: '&cCancelled!'
+  rtp-queue-action-bar: '&a🗡 &fWaiting for &a1 &fplayer! &7&n(/rtpqueue)'
+  rtp-quit-queue-action-bar: '&fYou left the &a&lRTPQueue!'
+  rtp-queue-countdown-action-bar: '&fFight starts in &a&l%seconds%s'
+  rtp-queue-teleporting-action-bar: '&fMatch found! Good luck!'
+
+cooldown:
+  module:
+    chat:
+      enabled: true
+      message:
+        - "&fTeleport in &b%time%s"
+    actionbar:
+      enabled: true
+      message:
+        - "&fTeleport in &b%time%s"
+    title:
+      enabled: false
+      message:
+        - ""
+    subtitle:
+      enabled: false
+      message:
+        - ""
+
+rtp-zone-cooldown:
+  module:
+    chat:
+      enabled: true
+      message:
+        - "&fTeleport in &b%time%s"
+    actionbar:
+      enabled: true
+      message:
+        - "&fTeleport in &b%time%s"
+    title:
+      enabled: false
+      message:
+        - ""
+    subtitle:
+      enabled: false
+      message:
+        - ""
