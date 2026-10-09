@@ -218,8 +218,7 @@ public final class TeamHomeButtonListener implements Listener {
 
     private void openHomesAgain(Player player) {
         try {
-            Object gui = call(plugin, "getMainGUI");
-            call(gui, "openHomeGUI", player);
+            call(plugin, "openHomesGUI", player);
         } catch (ReflectiveOperationException ignored) { }
     }
 
