@@ -1,0 +1,19 @@
+name: NyrethaHomes
+version: '1.9'
+main: com.nyretha.home.Home
+api-version: '1.21'
+author: NyrethaSMP
+description: Standalone Nyretha Homes module
+folia-supported: true
+commands:
+  home:
+    aliases: [homes]
+  sethome:
+  delhome:
+permissions:
+  home.reload:
+    default: op
+  home.bypass:
+    default: op
+  home.others:
+    default: op
