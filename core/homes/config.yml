@@ -1,9 +1,10 @@
+# NyrethaSMP Homes configuration
 homes:
   teleport-delay: 5
   teleport-distance: 0.3
   default-max-homes: 3
 
-Sounds:
+sounds:
   teleport-cooldown: "block.note_block.pling"
   teleport-complete: "entity.enderman.teleport"
   teleport-cancel: "entity.villager.no"
@@ -11,12 +12,15 @@ Sounds:
   reload-success: "entity.player.levelup"
   click-sound: "ui.button.click"
 
-block-world:
-  - "world_example"
-block-world-guard:
-  - "region_example"
+block-world: []
+block-world-guard: []
 
-# Team Home integration with the optional Teams plugin
-team-home:
-  # Choose ChatAPI or SignAPI for right-click rename input.
-  rename-input: "ChatAPI"
+chat-input:
+  SignAPI: true
+  ChatAPI: false
+
+sign-gui:
+  - ''
+  - '↑↑↑↑↑↑↑↑↑↑↑↑↑'
+  - '    Name    '
+  - '             '

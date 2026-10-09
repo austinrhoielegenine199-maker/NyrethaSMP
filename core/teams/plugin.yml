@@ -1,8 +1,0 @@
-name: NyrethaTeams
-version: '1.8'
-main: com.nyretha.team.Team
-api-version: '1.21'
-description: NyrethaSMP teams module
-commands:
-  team:
-    aliases: [teams]

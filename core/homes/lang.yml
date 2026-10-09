@@ -1,5 +1,64 @@
+# NyrethaSMP Homes messages
+prefix-enable: false
+prefix: "&b&lNYRETHA HOMES &7»"
+
 messages:
-  team-home-no-team: "&#FF0000You have no team!"
-  team-home-no-home: "&7Your team has not set a home yet."
-  team-home-teleport-start: "&fTeleporting to team home..."
-  team-home-teleport-failed: "&#FF0000Could not teleport to your team home."
+  no-permission: "&cYou don't have permission for this!"
+  player-only: "&cOnly players can use this command!"
+  reload-success: "&aHomes configuration reloaded!"
+  home-set: "&fHome &a%home% &fhas been set."
+  home-deleted: "&fHome &c%home% &fhas been deleted."
+  home-not-found: "&fHome &c%home% &fwas not found!"
+  max-homes: "&cYou have reached the maximum number of homes! &7(%max_homes%)"
+  home-already-set: "&fYou already have a home at this position."
+  teleport-cancelled: "&cTeleport cancelled!"
+  teleport-completed: "&aYou have been teleported to home %home%!"
+  already-teleporting: "&cYou are already teleporting!"
+  invalid-home: "&cInvalid home number!"
+  player-not-found: "&cPlayer not found!"
+  opening-others-gui: "&fOpening homes for &c%player%"
+  admin-home-set: "&fHome &a%home% &fhas been set for &c%player%"
+  admin-teleport-completed: "&fTeleported to &a%home% &fof &c%player%!"
+  world-blocked: "&cYou can't set a home in this world! &7(%world%)"
+  region-blocked: "&cYou can't set a home here! &7(%region%)"
+  rename-success: "&fHome &a%home% &frenamed to &a%name%&f!"
+  rename-too-long: "&cHome names can be up to 20 characters."
+  rename-invalid-chars: "&cInvalid home name!"
+  rename-prompt: "&cType the new name for your home in chat."
+  rename-cancelled: "&cHome renaming cancelled!"
+
+action-bars:
+  reload-success: "&aHomes configuration reloaded!"
+  teleport-cancelled: "&cTeleport cancelled!"
+  teleport-completed: "&aTeleported to home %home%!"
+  already-teleporting: "&cYou are already teleporting!"
+
+command-usage: |
+  &b&lHOME
+  &b➤ &f/home
+  &b➤ &f/sethome <1-5>
+  &b➤ &f/delhome <1-5>
+
+command-usage-admin: |
+  &c&lHOME ADMIN
+  &c➤ &f/home reload
+  &c➤ &f/home admin <player>
+
+cooldown:
+  module:
+    chat:
+      enabled: true
+      message:
+        - "&fTeleport in &b%count% &fseconds"
+    actionbar:
+      enabled: true
+      message:
+        - "&fTeleport in &b%count% &fseconds"
+    title:
+      enabled: false
+      message:
+        - ""
+    subtitle:
+      enabled: false
+      message:
+        - ""

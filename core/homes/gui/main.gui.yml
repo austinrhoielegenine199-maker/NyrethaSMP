@@ -1,68 +1,42 @@
-title: "&8ʜᴏᴍᴇꜱ"
+title: "&8Homes"
 rows: 4
 
 homes:
-  # Home buttons shifted one slot to the right to make room for Team Home.
-  slot-beds: "12,13,14,15,16"
-  slot-dyes: "21,22,23,24,25"
-
-team-home:
-  slot: 10
-  rename-button:
-    slot: 19
-    name: "&bʀᴇɴᴀᴍᴇ ᴛᴇᴀᴍ ʜᴏᴍᴇ"
-    material: "BLUE_DYE"
-    lore:
-      - "&fClick to rename your team home"
-  no-team:
-    name: "&#FF0000ʏᴏᴜ ʜᴀᴠᴇ ɴᴏ ᴛᴇᴀᴍ!"
-    material: "RED_BANNER"
-    lore:
-      - "&7Join or create a team to use Team Home."
-  no-home:
-    name: "&7ᴛᴇᴀᴍ ʜᴏᴍᴇ"
-    material: "GRAY_BANNER"
-    lore:
-      - "&7Your team has not set a home yet."
-      - "&7Ask your team leader to use /team sethome."
-  home-set:
-    name: "&#0044FCᴛᴇᴀᴍ ʜᴏᴍᴇ"
-    material: "BLUE_BANNER"
-    lore:
-      - "&fClick to teleport to your team home."
+  slot-beds: "11,12,13,14,15"
+  slot-dyes: "20,21,22,23,24"
 
 home-set:
   bed:
-    name: "&#0044FCʜᴏᴍᴇ %home%"
+    name: "&bHome %home%"
     material: "LIGHT_BLUE_BED"
     lore:
       - "&fClick to teleport"
   dye:
-    name: "&#0044FCʜᴏᴍᴇ %home%"
+    name: "&bHome %home%"
     material: "BLUE_DYE"
     lore:
       - "&fClick to delete"
 
 home-not-set:
   bed:
-    name: "&7ɴᴏ ʜᴏᴍᴇ ꜱᴇᴛ"
+    name: "&7No home set"
     material: "LIGHT_GRAY_BED"
     lore:
       - "&fClick to save your location"
   dye:
-    name: "&7ɴᴏ ʜᴏᴍᴇ ꜱᴇᴛ"
+    name: "&7No home set"
     material: "GRAY_DYE"
     lore:
       - "&fClick to save your location"
 
 no-permission:
   bed:
-    name: "&#FF0000ɴᴏ ᴘᴇʀᴍɪꜱꜱɪᴏɴ"
+    name: "&cNo permission"
     material: "RED_BED"
     lore:
-      - "&fBuy &#0044FCDonut+ &fin /store for more homes"
+      - "&fYou don't have permission to use this home slot."
   dye:
-    name: "&#FF0000ɴᴏ ᴘᴇʀᴍɪꜱꜱɪᴏɴ"
+    name: "&cNo permission"
     material: "RED_DYE"
     lore:
-      - "&fBuy &#0044FCDonut+ &fin /store for more homes"
+      - "&fYou don't have permission to use this home slot."
