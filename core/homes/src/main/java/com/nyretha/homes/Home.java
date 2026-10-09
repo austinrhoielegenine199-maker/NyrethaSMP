@@ -23,6 +23,10 @@ public final class Home extends JavaPlugin {
         getLogger().info("NyrethaHomes enabled.");
     }
 
+    public void openHomesGUI(Player player) {
+        player.openInventory(getServer().createInventory(null, 36, ChatColor.translateAlternateColorCodes('&', "&8ʜᴏᴍᴇꜱ")));
+    }
+
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
         if (!(sender instanceof Player player)) {
@@ -30,8 +34,7 @@ public final class Home extends JavaPlugin {
             return true;
         }
         if (command.getName().equalsIgnoreCase("home") || command.getName().equalsIgnoreCase("homes")) {
-            Inventory gui = getServer().createInventory(null, 36, ChatColor.translateAlternateColorCodes('&', "&8ʜᴏᴍᴇꜱ"));
-            player.openInventory(gui);
+            openHomesGUI(player);
             return true;
         }
         return false;
