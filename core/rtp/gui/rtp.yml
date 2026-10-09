@@ -1,0 +1,41 @@
+title: '&8ʀᴀɴᴅᴏᴍ ᴛᴇʟᴇᴘᴏʀᴛ'
+rows: 3
+
+fill:
+  enabled: false
+  material: "BLACK_STAINED_GLASS_PANE"
+  display-name: ""
+  sound: "ENTITY_VILLAGER_NO"
+  slots: "0-8,9-17,18-26"
+
+worlds:
+  overworld:
+    slot: 11
+    world: world
+    material: GRASS_BLOCK
+    name: '&#00FF89ᴏᴠᴇʀᴡᴏʀʟᴅ'
+    lore:
+      - '&fClick to random teleport'
+      - ''
+      - '&7Player (&#00A0FC%players%&7)'
+    permission: ''
+  nether:
+    slot: 13
+    world: world_nether
+    material: NETHERRACK
+    name: '&#00FF89ɴᴇᴛʜᴇʀ'
+    lore:
+      - '&fClick to random teleport'
+      - ''
+      - '&7Player (&#00A0FC%players%&7)'
+    permission: ''
+  end:
+    slot: 15
+    world: world_the_end
+    material: END_STONE
+    name: '&#00FF89ᴇɴᴅ'
+    lore:
+      - '&7Click to random teleport'
+      - ''
+      - '&7Player (&#00A0FC%players%&7)'
+    permission: ''
