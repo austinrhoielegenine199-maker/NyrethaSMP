@@ -1,0 +1,8 @@
+shards-booster:
+  material: "GLASS_BOTTLE"
+  name: '&#099bffғʟᴀᴋᴇ ʙᴏᴏꜱᴛᴇʀ'
+  lore:
+    - '&7%amount%x Flake Production for %time% hours'
+    - '&8The booster lasts one day.'
+  shard-amount: 4
+  duration: 24
