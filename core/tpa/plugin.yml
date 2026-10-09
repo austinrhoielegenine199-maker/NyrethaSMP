@@ -1,0 +1,25 @@
+name: NyrethaCore
+version: '1.0'
+# The core plugin's main Java class will be added later.
+main: com.nyretha.tpa.TPA
+api-version: '1.21'
+description: NyrethaCore TPA module
+folia-supported: true
+
+commands:
+  tpa:
+  tpahere:
+  tpaccept:
+  tpadeny:
+  tpacancel:
+  tpatoggle:
+  tpaheretoggle:
+  tpareload:
+  tpagui:
+  tpaheregui:
+  tpauto:
+  tpahereauto:
+
+permissions:
+  tpa.admin:
+    default: op
