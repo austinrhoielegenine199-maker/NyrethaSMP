@@ -1,0 +1,5 @@
+messages:
+  team-home-no-team: "&#FF0000You have no team!"
+  team-home-no-home: "&7Your team has not set a home yet."
+  team-home-teleport-start: "&fTeleporting to team home..."
+  team-home-teleport-failed: "&#FF0000Could not teleport to your team home."
