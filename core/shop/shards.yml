@@ -37,3 +37,84 @@ items:
     slot: 5
     amount: 1
     lore: ['&fBuy Price: &#009bff2000x &#009bffғʟᴀᴋᴇ']
+  pig-spawner:
+    displayname: '&dSpawner'
+    material: SPAWNER
+    take-command: 'gems take %player% %price%'
+    give-command: 'spawner give pig'
+    price: 1500
+    slot: 9
+    amount: 1
+    lore: ['&ePig', '&fBuy Price: &#009bff1500x &#009bffғʟᴀᴋᴇ']
+  cow-spawner:
+    displayname: '&dSpawner'
+    material: SPAWNER
+    take-command: 'gems take %player% %price%'
+    give-command: 'spawner give cow'
+    price: 1500
+    slot: 10
+    amount: 1
+    lore: ['&eCow', '&fBuy Price: &#009bff1500x &#009bffғʟᴀᴋᴇ']
+  zombie-spawner:
+    displayname: '&dSpawner'
+    material: SPAWNER
+    take-command: 'gems take %player% %price%'
+    give-command: 'spawner give zombie'
+    price: 1500
+    slot: 11
+    amount: 1
+    lore: ['&eZombie', '&fBuy Price: &#009bff1500x &#009bffғʟᴀᴋᴇ']
+  spider-spawner:
+    displayname: '&dSpawner'
+    material: SPAWNER
+    take-command: 'gems take %player% %price%'
+    give-command: 'spawner give spider'
+    price: 1500
+    slot: 12
+    amount: 1
+    lore: ['&eSpider', '&fBuy Price: &#009bff1500x &#009bffғʟᴀᴋᴇ']
+  skeleton-spawner:
+    displayname: '&dSpawner'
+    material: SPAWNER
+    take-command: 'gems take %player% %price%'
+    give-command: 'spawner give skeleton'
+    price: 1500
+    slot: 13
+    amount: 1
+    lore: ['&eSkeleton', '&fBuy Price: &#009bff1500x &#009bffғʟᴀᴋᴇ']
+  creeper-spawner:
+    displayname: '&dSpawner'
+    material: SPAWNER
+    take-command: 'gems take %player% %price%'
+    give-command: 'spawner give creeper'
+    price: 1500
+    slot: 14
+    amount: 1
+    lore: ['&eCreeper', '&fBuy Price: &#009bff1500x &#009bffғʟᴀᴋᴇ']
+  zombified-piglin-spawner:
+    displayname: '&dSpawner'
+    material: SPAWNER
+    take-command: 'gems take %player% %price%'
+    give-command: 'spawner give pig zombified piglin'
+    price: 1500
+    slot: 15
+    amount: 1
+    lore: ['&eZombified Piglin', '&fBuy Price: &#009bff1500x &#009bffғʟᴀᴋᴇ']
+  blaze-spawner:
+    displayname: '&dSpawner'
+    material: SPAWNER
+    take-command: 'gems take %player% %price%'
+    give-command: 'spawner give blaze'
+    price: 1500
+    slot: 16
+    amount: 1
+    lore: ['&eBlaze', '&fBuy Price: &#009bff1500x &#009bffғʟᴀᴋᴇ']
+  iron_golem-spawner:
+    displayname: '&dSpawner'
+    material: SPAWNER
+    take-command: 'gems take %player% %price%'
+    give-command: 'spawner give iron golem'
+    price: 1500
+    slot: 17
+    amount: 1
+    lore: ['&eIron Golem', '&fBuy Price: &#009bff1500x &#009bffғʟᴀᴋᴇ']
