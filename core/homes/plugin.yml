@@ -1,0 +1,9 @@
+name: NyrethaHomes
+version: '1.9'
+main: com.nyretha.homes.Home
+api-version: '1.21'
+description: NyrethaSMP homes module
+softdepend: [WorldGuard, Teams]
+commands:
+  home:
+    aliases: [homes]
