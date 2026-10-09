@@ -1,0 +1,49 @@
+title: "&8ᴛᴏᴏʟꜱ"
+rows: 3
+pages: 2
+
+fill:
+  enabled: false
+  material: "BLACK_STAINED_GLASS_PANE"
+  display-name:
+  slots: "0-8,18-26"
+
+icons:
+  previous-page-slot: 18
+  previous-page:
+    material: ARROW
+    displayname: "&#00fc88ᴘʀᴇᴠɪᴏᴜꜱ"
+    lore:
+      - "&fClick to go to the previous page"
+  next-page-slot: 26
+  next-page:
+    material: ARROW
+    displayname: "&#00fc88ɴᴇxᴛ"
+    lore:
+      - "&fClick to go to the next page"
+
+Tools:
+  drill: { slot: 11, page: 1 }
+  treechopper: { slot: 12, page: 1 }
+  shovel: { slot: 13, page: 1 }
+  hoe: { slot: 14, page: 1 }
+  enderpearl: { slot: 15, page: 1 }
+  rocket: { slot: 16, page: 1 }
+  waterbucket: { slot: 10, page: 1 }
+  lavabucket: { slot: 9, page: 1 }
+  jump: { slot: 17, page: 1 }
+  totem: { slot: 10, page: 2 }
+  chunkdrill: { slot: 9, page: 2 }
+
+Close-button:
+  material: RED_STAINED_GLASS_PANE
+  display-name: "&#FF0000ᴄʟᴏꜱᴇ"
+  lore:
+    - "&fclick to close"
+  slot: 18
+
+sounds:
+  close-sound: "ui.button.click"
+  inventory-full-sound: "entity.villager.no"
+  tool-given-sound: "entity.experience_orb.pickup"
+  reload-sound: "entity.player.levelup"
