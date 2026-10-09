@@ -1,0 +1,25 @@
+# Shards plugin configuration. Internal command aliases, permissions, and placeholders remain unchanged.
+# Currency display name: &#099bffғʟᴀᴋᴇs
+
+Shards-give-options:
+  shards-per-minute: 1
+
+command-aliases:
+  - shards
+  - shard
+
+enabled-worlds:
+  - World1
+
+enabled-regions:
+  - afk1_example
+
+vip-perm:
+  enabled: true
+  shards-per-minute: 2
+
+Sounds:
+  click-sound: "UI_BUTTON_CLICK"
+  plugin-reloaded: "ENTITY_PLAYER_LEVELUP"
+  level-up: "ENTITY_PLAYER_LEVELUP"
+  booster-activate: "ENTITY_PLAYER_LEVELUP"
