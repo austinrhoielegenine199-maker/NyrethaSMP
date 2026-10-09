@@ -1,0 +1,21 @@
+name: NyrethaCore
+version: '1.0'
+# The core plugin's main Java class will be added later.
+main: com.nyretha.rtp.RTP
+api-version: '1.21'
+description: NyrethaCore RTP module
+folia-supported: true
+softdepend: [LuckPerms, WorldGuard, PlaceholderAPI]
+
+commands:
+  rtp:
+  rtpqueue:
+    aliases: [rtpq]
+
+permissions:
+  rtp.use:
+    default: true
+  rtp.admin:
+    default: op
+  rtp.bypass:
+    default: op
