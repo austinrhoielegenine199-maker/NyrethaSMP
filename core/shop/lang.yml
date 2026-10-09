@@ -1,0 +1,17 @@
+prefix-enable: true
+prefix: '&#009bffꜱʜᴏᴘ &7» '
+messages:
+  not-enough-shards: "&cYou don't have enough &#009bffғʟᴀᴋᴇ!"
+  purchase-shards: '&fYou bought &a{item} &ffor &#009bff{price} &#009bffғʟᴀᴋᴇ&f!'
+action-bars:
+  not-enough-shards: "&cYou don't have enough &#009bffғʟᴀᴋᴇ!"
+purchase-shards:
+  module:
+    chat:
+      enabled: true
+      message:
+        - '&fYou bought &a{item} &ffor &#009bff{price} &#009bffғʟᴀᴋᴇ&f!'
+    actionbar:
+      enabled: true
+      message:
+        - '&fYou bought &a{item} &ffor &#009bff{price} &#009bffғʟᴀᴋᴇ&f!'
