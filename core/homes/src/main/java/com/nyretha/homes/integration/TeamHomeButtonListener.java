@@ -94,11 +94,19 @@ public final class TeamHomeButtonListener implements Listener {
             return;
         }
 
-        if (!isHomesInventory(title) || slot != TEAM_HOME_SLOT) return;
+        if (!isHomesInventory(title) || (slot != TEAM_HOME_SLOT && slot != 19)) return;
         event.setCancelled(true);
         TeamState state = getTeamState(player);
         if (!state.hasTeam) {
             player.sendMessage(color("&cYou have no team!"));
+            return;
+        }
+        if (slot == 19) {
+            if (state.home == null || state.home.getWorld() == null) {
+                player.sendMessage(color("&7Your team has not set a home yet."));
+                return;
+            }
+            beginRename(player, state);
             return;
         }
         if (state.home == null || state.home.getWorld() == null) {
