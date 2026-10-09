@@ -1,0 +1,67 @@
+# RTP module configuration
+# Blocks and biomes that are unsafe for random teleport destinations.
+blacklisted-blocks:
+  - LAVA
+  - WATER
+
+blacklisted-biomes:
+  - BEACH
+
+# Maximum distance a player may walk before a pending teleport is cancelled.
+allowed-walk-range: 3
+
+# Delay and cooldown values are in seconds.
+wait-time-seconds: 5
+default-cooldown-seconds: 60
+
+# Number of candidate locations calculated ahead of time.
+pregenerate-location-amount: 10
+
+effects-on-random-teleport:
+  '1':
+    type: ABSORPTION
+    level: 10
+    seconds: 10
+
+world-settings:
+  overworld-region:
+    world: world
+    min-x: -50000
+    max-x: 50000
+    min-z: -50000
+    max-z: 50000
+
+  nether-region:
+    world: world_nether
+    min-x: -50000
+    max-x: 50000
+    min-z: -50000
+    max-z: 50000
+
+  end-region:
+    world: world_the_end
+    min-x: -50000
+    max-x: 50000
+    min-z: -50000
+    max-z: 50000
+
+# Requires WorldGuard. Countdown placeholder: %rtp_zone_countdown_<name>%
+rtp-zones:
+  '1':
+    enabled: true
+    zone-region: rtpzone
+    zone-world: world
+    cooldown-time: 60
+    minimum-players: 1
+    arena-distance: 10
+    glowing-duration: 6
+    rtp-worlds:
+      - world
+
+sound:
+  teleport_cooldown: block.note_block.pling
+  teleporting: entity.enderman.teleport
+  button_click: ui.button.click
+  teleport_success: entity.player.levelup
+  teleport_fail: entity.villager.no
+  reload: entity.experience_orb.pickup
