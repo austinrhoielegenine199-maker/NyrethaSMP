@@ -38,6 +38,8 @@ public final class DataManager {
     public boolean addMember(String player) { boolean changed = members.add(player); if (changed) save(); return changed; }
     public boolean removeMember(String player) { boolean changed = members.removeIf(n -> n.equalsIgnoreCase(player)); if (changed) save(); return changed; }
     public boolean isLeader(String player) { return leader != null && leader.equalsIgnoreCase(player); }
+    public boolean getTeamPvpEnabled() { return data.getBoolean("pvp-enabled", false); }
+    public void setTeamPvpEnabled(boolean enabled) { data.set("pvp-enabled", enabled); save(); }
     public void setHome(Location location) {
         data.set("home.world", location.getWorld().getName()); data.set("home.x", location.getX());
         data.set("home.y", location.getY()); data.set("home.z", location.getZ());
