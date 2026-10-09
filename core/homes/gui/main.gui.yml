@@ -8,6 +8,12 @@ homes:
 
 team-home:
   slot: 10
+  rename-button:
+    slot: 19
+    name: "&bʀᴇɴᴀᴍᴇ ᴛᴇᴀᴍ ʜᴏᴍᴇ"
+    material: "BLUE_DYE"
+    lore:
+      - "&fClick to rename your team home"
   no-team:
     name: "&#FF0000ʏᴏᴜ ʜᴀᴠᴇ ɴᴏ ᴛᴇᴀᴍ!"
     material: "RED_BANNER"
