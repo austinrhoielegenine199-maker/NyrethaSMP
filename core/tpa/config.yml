@@ -1,0 +1,21 @@
+# TPA module configuration
+request-timeout: 30
+teleport-delay: 5
+cancel-on-move: true
+
+world-nicknames:
+  world: '&7Overworld'
+  world_nether: '&7Nether'
+  world_the_end: '&7End'
+
+fly-status:
+  true: 'Yes'
+  false: 'No'
+
+sound:
+  teleport-cooldown: "block.note_block.pling"
+  teleporting: "entity.enderman.teleport"
+  button-click: "ui.button.click"
+  teleport-success: "entity.player.levelup"
+  teleport-fail: "entity.villager.no"
+  reload: "entity.experience_orb.pickup"
