@@ -1,0 +1,33 @@
+name: '&8ᴛᴘᴀ ʜᴇʀᴇ ᴀᴄᴄᴇᴘᴛ'
+rows: 3
+icons:
+  cancel-icon:
+    slot: 10
+    material: RED_STAINED_GLASS_PANE
+    display-name: '&#FF0000ᴄᴀɴᴄᴇʟ'
+    lore:
+      - '&fClick here to cancel'
+  location-icon:
+    slot: 12
+    material: GRASS_BLOCK
+    display-name: '&#00f986ʟᴏᴄᴀᴛɪᴏɴ'
+    lore:
+      - '&7%world%'
+  player-icon:
+    slot: 13
+    material: PLAYER_HEAD
+    display-name: '&#00f986ᴘʟᴀʏᴇʀ'
+    lore:
+      - '&7%player%'
+  confirm-icon:
+    slot: 16
+    material: LIME_STAINED_GLASS_PANE
+    display-name: '&#00FF00ᴄᴏɴғɪʀᴍ'
+    lore:
+      - '&fClick to accept the teleport Here request from %player%'
+  fly-icon:
+    slot: 14
+    material: FEATHER
+    display-name: '&#00f986ғʟʏɪɴɢ'
+    lore:
+      - '&7%is_flying%'
