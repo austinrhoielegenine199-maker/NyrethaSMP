@@ -1,0 +1,54 @@
+title: '&8ʀᴛᴘqᴜᴇᴜᴇ'
+rows: 3
+
+fill:
+  enabled: false
+  material: "BLACK_STAINED_GLASS_PANE"
+  display-name: ""
+  sound: "ENTITY_VILLAGER_NO"
+  slots: "0-8,9-17,18-26"
+
+worlds:
+  overworld:
+    slot: 11
+    world: world
+    material: GRASS_BLOCK
+    name: '&#00FF89ᴏᴠᴇʀᴡᴏʀʟᴅ'
+    lore:
+      - ''
+      - '&bInformation:'
+      - '&fPlay 1v1s against other players'
+      - '&fIn different &#00FF89worlds.'
+      - ''
+      - '&#00FF89&l⏺ &fPlayers in queue: &#00FF89%queue-amount%/2'
+      - ''
+      - '&#E0E319&l➟ &#E0E319&l&nCLICK&#E0E319 to queue'
+  nether:
+    slot: 13
+    world: world_nether
+    material: NETHERRACK
+    name: '&#00FF89ɴᴇᴛʜᴇʀ'
+    lore:
+      - ''
+      - '&bInformation:'
+      - '&fPlay 1v1s against other players'
+      - '&fIn different &#00FF89worlds.'
+      - ''
+      - '&#00FF89&l⏺ &fPlayers in queue: &#00FF89%queue-amount%/2'
+      - ''
+      - '&#E0E319&l➟ &#E0E319&l&nCLICK&#E0E319 to queue'
+
+  end:
+    slot: 15
+    world: world_the_end
+    material: END_STONE
+    name: '&#00FF89ᴇɴᴅ'
+    lore:
+      - ''
+      - '&bInformation:'
+      - '&fPlay 1v1s against other players'
+      - '&fIn different &#00FF89worlds.'
+      - ''
+      - '&#00FF89&l⏺ &fPlayers in queue: &#00FF89%queue-amount%/2'
+      - ''
+      - '&#E0E319&l➟ &#E0E319&l&nCLICK&#E0E319 to queue'
