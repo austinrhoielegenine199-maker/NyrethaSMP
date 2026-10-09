@@ -12,7 +12,6 @@ import org.bukkit.Material;
 import org.bukkit.World;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
-import org.bukkit.configuration.ConfigurationSection;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -99,8 +98,9 @@ public final class Home extends JavaPlugin implements Listener {
             return;
         }
         player.closeInventory();
+        final int homeIndex = index;
         player.teleportAsync(home).thenAccept(success -> {
-            if (success) player.sendMessage(color("&aTeleported to home " + (index + 1) + "."));
+            if (success) player.sendMessage(color("&aTeleported to home " + (homeIndex + 1) + "."));
             else player.sendMessage(color("&cCould not teleport to that home."));
         });
     }
