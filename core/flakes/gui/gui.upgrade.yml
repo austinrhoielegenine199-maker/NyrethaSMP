@@ -1,0 +1,27 @@
+# Placeholders: %price%, %flakes_added%, %player%, %flakes_level%
+gui:
+  title: '&8ғʟᴀᴋᴇ ʟᴇᴠᴇʟ'
+  rows: 3
+
+background:
+  fill: false
+  material: "GRAY_STAINED_GLASS_PANE"
+  name: ""
+  lore: []
+  slots: 0-8
+
+items:
+  close:
+    material: "RED_STAINED_GLASS_PANE"
+    name: "&#FF0000ᴄʟᴏꜱᴇ"
+    lore:
+      - "&fClick to return"
+    slot: 18
+  upgrade:
+    material: "AMETHYST_CLUSTER"
+    name: '&#099bffғʟᴀᴋᴇ ʟᴇᴠᴇʟ'
+    lore:
+      - "&#099bff&l⏺ &fPrice: &#099bff%price%"
+      - ""
+      - "&fClick to level up"
+    slot: 13
