@@ -11,7 +11,7 @@ public final class LangManager {
     public LangManager(Team plugin) {
         this.plugin = plugin;
         File file = new File(plugin.getDataFolder(), "lang.yml");
-        if (!file.exists()) plugin.saveResource("lang.yml", false);
+        if (!file.exists()) { try { plugin.saveResource("lang.yml", false); } catch (IllegalArgumentException ignored) { try { file.getParentFile().mkdirs(); file.createNewFile(); } catch (java.io.IOException ex) { plugin.getLogger().warning(ex.getMessage()); } } }
         messages = YamlConfiguration.loadConfiguration(file);
     }
     public String getMessage(String path) {
