@@ -1,0 +1,32 @@
+prefix: "&8[&#34eb9bTeams&8] &r"
+errors:
+  team-already-exists: "&cA team with this name already exists!"
+  already-in-team: "&cYou are already in a team!"
+  not-in-team: "&cYou are not in a team!"
+  not-leader: "&cOnly the team leader can do that!"
+  player-not-found: "&cPlayer not found!"
+  player-already-in-team: "&cThis player is already in a team!"
+  team-not-found: "&cTeam not found!"
+  leader-cant-leave: "&cThe leader must delete the team or transfer leadership."
+  team-full: "&cThe team is full!"
+team:
+  created: "&aTeam %team% created."
+  invite-sent: "&aInvitation sent to %player%."
+  invite-received: "&e%player% invited you to %team%. Use /team join %team%."
+  joined: "&aYou joined %team%."
+  left: "&eYou left your team."
+  deleted: "&cTeam %team% was deleted."
+  member-joined: "&a%player% joined the team."
+  member-left: "&e%player% left the team."
+  home-set: "&aTeam home set."
+  no-team-home: "&cYour team has no home set."
+  teleport-completed: "&aTeleported to team home."
+command-usage: |
+  &a/team create <name>
+  &a/team invite <player>
+  &a/team join <name>
+  &a/team leave
+  &a/team delete
+  &a/team info
+  &a/team sethome
+  &a/team home
