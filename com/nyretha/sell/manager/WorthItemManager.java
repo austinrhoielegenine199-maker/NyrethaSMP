@@ -1,6 +1,6 @@
-package de.elivb.sell.manager;
+package com.nyretha.sell.manager;
 
-import de.elivb.sell.utils.CurrencyFormatter;
+import com.nyretha.sell.utils.CurrencyFormatter;
 import java.util.HashMap;
 import org.bukkit.Material;
 import org.bukkit.block.BlockState;
