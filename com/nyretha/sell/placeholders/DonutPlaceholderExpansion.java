@@ -1,6 +1,6 @@
-package de.elivb.sell.placeholders;
+package com.nyretha.sell.placeholders;
 
-import de.elivb.sell.Sell;
+import com.nyretha.sell.Sell;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
