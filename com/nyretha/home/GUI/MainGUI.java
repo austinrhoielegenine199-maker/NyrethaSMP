@@ -14,6 +14,10 @@ public final class MainGUI {
     private MainGUI() {}
     public static Inventory create(Player player, int maxHomes) {
         Inventory inventory = Bukkit.createInventory(player, 36, TITLE);
+        ItemStack teamHome = new ItemStack(Material.GRAY_BANNER);
+        ItemMeta teamMeta = teamHome.getItemMeta();
+        if (teamMeta != null) { teamMeta.setDisplayName(ChatColor.YELLOW + "Team Home"); teamHome.setItemMeta(teamMeta); }
+        inventory.setItem(10, teamHome);
         for (int slot = 11; slot <= 15; slot++) {
             int number = slot - 10;
             ItemStack item = new ItemStack(Material.LIGHT_GRAY_BED);
