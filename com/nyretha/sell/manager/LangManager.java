@@ -1,7 +1,7 @@
-package de.elivb.sell.manager;
+package com.nyretha.sell.manager;
 
-import de.elivb.sell.HexColorCode;
-import de.elivb.sell.Sell;
+import com.nyretha.sell.HexColorCode;
+import com.nyretha.sell.Sell;
 import java.io.File;
 import java.io.InputStream;
 import java.nio.file.CopyOption;
