@@ -1,8 +1,8 @@
-package de.elivb.sell.manager;
+package com.nyretha.sell.manager;
 
-import de.elivb.sell.HexColorCode;
-import de.elivb.sell.Sell;
-import de.elivb.sell.utils.CurrencyFormatter;
+import com.nyretha.sell.HexColorCode;
+import com.nyretha.sell.Sell;
+import com.nyretha.sell.utils.CurrencyFormatter;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.ConcurrentHashMap;
