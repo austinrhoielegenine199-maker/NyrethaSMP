@@ -706,7 +706,7 @@ public class SellHistoryGUI implements InventoryHolder {
 
       static ConfigCache load() {
          ConfigCache c = new ConfigCache();
-         File configFile = new File("plugins/Sell/gui/sellhistory.yml");
+         File configFile = new File("plugins/NyrethaSMP/sell/gui/sell.history.yml");
 
          try {
             if (!configFile.exists()) {
