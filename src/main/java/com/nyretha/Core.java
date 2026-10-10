@@ -81,7 +81,7 @@ public final class Core extends JavaPlugin {
         }
         String key = player.getUniqueId().toString();
         if (args.length == 0 || args[0].equalsIgnoreCase("balance")) {
-            sender.sendMessage(ChatColor.of("#009bff") + "Flakes: " + flakes.getInt(key, 0));
+            sender.sendMessage(net.md_5.bungee.api.ChatColor.of("#009bff") + "Flakes: " + flakes.getInt(key, 0));
             return true;
         }
         if (args[0].equalsIgnoreCase("take") && args.length == 3 && sender.hasPermission("flakes.admin")) {
@@ -101,7 +101,7 @@ public final class Core extends JavaPlugin {
             }
             flakes.set(targetKey, balance - amount);
             save(flakes, flakesFile, "Flakes");
-            sender.sendMessage(ChatColor.of("#009bff") + "Removed " + amount + " Flakes from " + target.getName() + ".");
+            sender.sendMessage(net.md_5.bungee.api.ChatColor.of("#009bff") + "Removed " + amount + " Flakes from " + target.getName() + ".");
             return true;
         }
         sender.sendMessage(ChatColor.RED + "Usage: /flakes [balance] or /flakes take <player> <amount>");
