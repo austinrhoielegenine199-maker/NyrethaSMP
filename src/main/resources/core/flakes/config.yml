@@ -1,5 +1,5 @@
 # Flakes plugin configuration. Internal command aliases, permissions, and placeholders remain unchanged.
-# Currency display name: &#099bffғʟᴀᴋᴇs
+# Currency display name: &#009bffғʟᴀᴋᴇs
 
 Flakes-give-options:
   flakes-per-minute: 1

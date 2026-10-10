@@ -6,14 +6,14 @@ import com.sk89q.worldguard.protection.ApplicableRegionSet;
 import com.sk89q.worldguard.protection.regions.ProtectedRegion;
 import com.sk89q.worldguard.protection.regions.RegionContainer;
 import com.sk89q.worldguard.protection.regions.RegionQuery;
-import com.nyretha.flakes.Command.GemsCommand;
+import com.nyretha.flakes.Command.FlakesCommand;
 import com.nyretha.flakes.GUI.Main;
 import com.nyretha.flakes.GUI.PayGUI;
 import com.nyretha.flakes.GUI.UpgradeGUI;
 import com.nyretha.flakes.Manager.DatabaseManager;
-import com.nyretha.flakes.Manager.GemManager;
+import com.nyretha.flakes.Manager.FlakeManager;
 import com.nyretha.flakes.Manager.LangManager;
-import com.nyretha.flakes.Manager.ShardBoosterManager;
+import com.nyretha.flakes.Manager.FlakeBoosterManager;
 import com.nyretha.flakes.Manager.SoundManager;
 import com.nyretha.flakes.Utlis.papi1;
 import java.lang.reflect.Constructor;
@@ -48,11 +48,11 @@ public class Flakes extends JavaPlugin implements Listener {
    private DatabaseManager databaseManager;
    private UpgradeGUI upgradeGUI;
    private LangManager langManager;
-   private GemManager gemManager;
+   private FlakeManager flakeManager;
    private Main viewManager;
    private PayGUI payGUI;
    private SoundManager soundManager;
-   private ShardBoosterManager shardBoosterManager;
+   private FlakeBoosterManager flakeBoosterManager;
    private FileConfiguration config;
    private papi1 papiExpansion;
    private List<String> enabledWorlds;
@@ -178,13 +178,13 @@ public class Flakes extends JavaPlugin implements Listener {
             this.databaseManager.initializeDatabase();
             this.runTaskLater(() -> this.databaseManager.cleanupOldBackups(7), 100L);
          });
-         this.gemManager = new GemManager(this);
+         this.flakeManager = new FlakeManager(this);
          this.viewManager = new Main(this);
          this.payGUI = new PayGUI(this);
          this.soundManager = new SoundManager(this);
          this.upgradeGUI = new UpgradeGUI(this);
-         this.shardBoosterManager = new ShardBoosterManager(this);
-         this.runAsync(() -> this.shardBoosterManager.loadAllBoosters());
+         this.flakeBoosterManager = new FlakeBoosterManager(this);
+         this.runAsync(() -> this.flakeBoosterManager.loadAllBoosters());
          this.runSync(this::registerCommands);
          this.getServer().getPluginManager().registerEvents(this.payGUI, this);
          this.getServer().getPluginManager().registerEvents(this.upgradeGUI, this);
@@ -197,8 +197,8 @@ public class Flakes extends JavaPlugin implements Listener {
 
          for(Player player : Bukkit.getOnlinePlayers()) {
             this.runForEntity(player, () -> {
-               if (this.gemManager != null) {
-                  this.gemManager.resetCooldownOnQuit(player);
+               if (this.flakeManager != null) {
+                  this.flakeManager.resetCooldownOnQuit(player);
                }
 
                this.checkRegionChange(player);
@@ -221,33 +221,33 @@ public class Flakes extends JavaPlugin implements Listener {
             Field knownCommandsField = SimpleCommandMap.class.getDeclaredField("knownCommands");
             knownCommandsField.setAccessible(true);
             Map<String, Command> knownCommands = (Map)knownCommandsField.get(commandMap);
-            knownCommands.remove("shards");
-            knownCommands.remove("shards:shards");
+            knownCommands.remove("flakes");
+            knownCommands.remove("flakes:flakes");
 
             for(String alias : this.getConfig().getStringList("command-aliases")) {
                knownCommands.remove(alias);
-               knownCommands.remove("shards:" + alias);
+               knownCommands.remove("flakes:" + alias);
             }
          } catch (Exception var9) {
          }
 
-         GemsCommand executor = new GemsCommand(this);
-         PluginCommand mainCommand = this.createCommand("shards");
+         FlakesCommand executor = new FlakesCommand(this);
+         PluginCommand mainCommand = this.createCommand("flakes");
          if (mainCommand != null) {
             mainCommand.setExecutor(executor);
-            mainCommand.setPermission("shards.use");
-            mainCommand.setUsage("/shards");
-            mainCommand.setLabel("shards");
+            mainCommand.setPermission("flakes.use");
+            mainCommand.setUsage("/flakes");
+            mainCommand.setLabel("flakes");
             mainCommand.setAliases(new ArrayList());
             commandMap.register("", mainCommand);
          }
 
          for(String alias : this.getConfig().getStringList("command-aliases")) {
-            if (!alias.equals("shards")) {
+            if (!alias.equals("flakes")) {
                PluginCommand aliasCommand = this.createCommand(alias);
                if (aliasCommand != null) {
                   aliasCommand.setExecutor(executor);
-                  aliasCommand.setPermission("shards.use");
+                  aliasCommand.setPermission("flakes.use");
                   aliasCommand.setUsage("/" + alias);
                   aliasCommand.setLabel(alias);
                   aliasCommand.setAliases(new ArrayList());
@@ -330,8 +330,8 @@ public class Flakes extends JavaPlugin implements Listener {
       }
    }
 
-   public boolean canEarnGemsAtLocation(Player player) {
-      if (player.hasPermission("shards.vip")) {
+   public boolean canEarnFlakesAtLocation(Player player) {
+      if (player.hasPermission("flakes.vip")) {
          return true;
       } else {
          boolean hasRegionConfig = !this.enabledRegions.isEmpty();
@@ -340,10 +340,10 @@ public class Flakes extends JavaPlugin implements Listener {
             if (this.isInAllowedRegion(player)) {
                return true;
             } else {
-               return playerRegions.isEmpty() ? this.canEarnGemsInWorld(player.getWorld().getName()) : false;
+               return playerRegions.isEmpty() ? this.canEarnFlakesInWorld(player.getWorld().getName()) : false;
             }
          } else {
-            return this.canEarnGemsInWorld(player.getWorld().getName());
+            return this.canEarnFlakesInWorld(player.getWorld().getName());
          }
       }
    }
@@ -352,12 +352,12 @@ public class Flakes extends JavaPlugin implements Listener {
    public void onPlayerJoin(PlayerJoinEvent event) {
       Player player = event.getPlayer();
       this.runForEntity(player, () -> {
-         if (this.gemManager != null) {
-            this.gemManager.resetCooldownOnQuit(player);
+         if (this.flakeManager != null) {
+            this.flakeManager.resetCooldownOnQuit(player);
          }
 
-         if (this.shardBoosterManager != null) {
-            this.shardBoosterManager.loadBoosterData(player);
+         if (this.flakeBoosterManager != null) {
+            this.flakeBoosterManager.loadBoosterData(player);
          }
 
          this.checkRegionChange(player);
@@ -369,8 +369,8 @@ public class Flakes extends JavaPlugin implements Listener {
       Player player = event.getPlayer();
       UUID playerId = player.getUniqueId();
       this.lastRegionStatus.remove(playerId);
-      if (this.gemManager != null) {
-         this.gemManager.resetCooldownOnQuit(player);
+      if (this.flakeManager != null) {
+         this.flakeManager.resetCooldownOnQuit(player);
       }
 
    }
@@ -394,16 +394,16 @@ public class Flakes extends JavaPlugin implements Listener {
    }
 
    private void checkRegionChange(Player player) {
-      if (this.gemManager != null) {
-         boolean canEarn = this.canEarnGemsAtLocation(player);
+      if (this.flakeManager != null) {
+         boolean canEarn = this.canEarnFlakesAtLocation(player);
          UUID playerId = player.getUniqueId();
          Boolean lastStatus = (Boolean)this.lastRegionStatus.get(playerId);
          if (lastStatus == null || lastStatus != canEarn) {
             this.lastRegionStatus.put(playerId, canEarn);
             if (canEarn) {
-               this.gemManager.onPlayerEnterArea(player);
+               this.flakeManager.onPlayerEnterArea(player);
             } else {
-               this.gemManager.onPlayerLeaveArea(player);
+               this.flakeManager.onPlayerLeaveArea(player);
             }
          }
 
@@ -457,7 +457,7 @@ public class Flakes extends JavaPlugin implements Listener {
       return this.economy;
    }
 
-   public boolean canEarnGemsInWorld(String worldName) {
+   public boolean canEarnFlakesInWorld(String worldName) {
       return this.enabledWorlds.contains(worldName);
    }
 
@@ -485,11 +485,11 @@ public class Flakes extends JavaPlugin implements Listener {
       return Bukkit.getWorld(worldName) != null;
    }
 
-   public boolean takeGems(UUID playerUUID, int amount) {
+   public boolean takeFlakes(UUID playerUUID, int amount) {
       try {
-         int currentGems = this.getDatabaseManager().getGems(playerUUID);
-         if (currentGems >= amount) {
-            this.getDatabaseManager().removeGems(playerUUID, amount);
+         int currentFlakes = this.getDatabaseManager().getFlakes(playerUUID);
+         if (currentFlakes >= amount) {
+            this.getDatabaseManager().removeFlakes(playerUUID, amount);
             return true;
          } else {
             return false;
@@ -499,25 +499,25 @@ public class Flakes extends JavaPlugin implements Listener {
       }
    }
 
-   public int getGems(UUID playerUUID) {
+   public int getFlakes(UUID playerUUID) {
       try {
-         return this.getDatabaseManager().getGems(playerUUID);
+         return this.getDatabaseManager().getFlakes(playerUUID);
       } catch (Exception var3) {
          return 0;
       }
    }
 
-   public boolean addGems(UUID playerUUID, int amount) {
+   public boolean addFlakes(UUID playerUUID, int amount) {
       try {
-         this.getDatabaseManager().addGems(playerUUID, amount);
+         this.getDatabaseManager().addFlakes(playerUUID, amount);
          return true;
       } catch (Exception var4) {
          return false;
       }
    }
 
-   public int getVIPShardsPerMinute() {
-      return this.config.getInt("vip-perm.shards-per-minute", 1);
+   public int getVIPFlakesPerMinute() {
+      return this.config.getInt("vip-perm.flakes-per-minute", 1);
    }
 
    public boolean isVIPEnabled() {
@@ -532,8 +532,8 @@ public class Flakes extends JavaPlugin implements Listener {
       return this.langManager;
    }
 
-   public GemManager getGemManager() {
-      return this.gemManager;
+   public FlakeManager getFlakeManager() {
+      return this.flakeManager;
    }
 
    public Main getViewManager() {
@@ -552,8 +552,8 @@ public class Flakes extends JavaPlugin implements Listener {
       return this.upgradeGUI;
    }
 
-   public ShardBoosterManager getShardBoosterManager() {
-      return this.shardBoosterManager;
+   public FlakeBoosterManager getFlakeBoosterManager() {
+      return this.flakeBoosterManager;
    }
 
    public FileConfiguration getPluginConfig() {
@@ -577,8 +577,8 @@ public class Flakes extends JavaPlugin implements Listener {
       this.config = this.getConfig();
       this.enabledWorlds = this.config.getStringList("enabled-worlds");
       this.enabledRegions = this.config.getStringList("enabled-regions");
-      if (this.shardBoosterManager != null) {
-         this.runAsync(() -> this.shardBoosterManager.reloadBoosterConfig());
+      if (this.flakeBoosterManager != null) {
+         this.runAsync(() -> this.flakeBoosterManager.reloadBoosterConfig());
       }
 
    }

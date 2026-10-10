@@ -1,17 +1,17 @@
 prefix-enable: true
-prefix: '&#099bffꜱʜᴏᴘ &7» '
+prefix: '&#009bffꜱʜᴏᴘ &7» '
 messages:
-  not-enough-flakes: "&cYou don't have enough &#099bffғʟᴀᴋᴇs!"
-  purchase-flakes: '&fYou bought &a{item} &ffor &#099bff{price} &#099bffғʟᴀᴋᴇs&f!'
+  not-enough-flakes: "&cYou don't have enough &#009bffғʟᴀᴋᴇs!"
+  purchase-flakes: '&fYou bought &a{item} &ffor &#009bff{price} &#009bffғʟᴀᴋᴇs&f!'
 action-bars:
-  not-enough-flakes: "&cYou don't have enough &#099bffғʟᴀᴋᴇs!"
+  not-enough-flakes: "&cYou don't have enough &#009bffғʟᴀᴋᴇs!"
 purchase-flakes:
   module:
     chat:
       enabled: true
       message:
-        - '&fYou bought &a{item} &ffor &#099bff{price} &#099bffғʟᴀᴋᴇs&f!'
+        - '&fYou bought &a{item} &ffor &#009bff{price} &#009bffғʟᴀᴋᴇs&f!'
     actionbar:
       enabled: true
       message:
-        - '&fYou bought &a{item} &ffor &#099bff{price} &#099bffғʟᴀᴋᴇs&f!'
+        - '&fYou bought &a{item} &ffor &#009bff{price} &#009bffғʟᴀᴋᴇs&f!'

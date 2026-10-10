@@ -1,22 +1,22 @@
 # User-facing currency text uses the blue Flake name. Command names, message keys, and placeholders are kept compatible.
 prefix-enable: true
-prefix: "&#099bffғʟᴀᴋᴇs &7» "
+prefix: "&#009bffғʟᴀᴋᴇs &7» "
 
 no-permission: '&cYou have no permission for that!'
 player-only: 'Only Players can use this command!'
 player-not-found: "&cPlayer not found"
 reload-success: '&#00FF00Flakes reloaded successfully!'
 invalid-number: "&cInvalid number!"
-not-enough-flakes: "&cYou do not have enough &#099bffғʟᴀᴋᴇs!"
+not-enough-flakes: "&cYou do not have enough &#009bffғʟᴀᴋᴇs!"
 not-enough-money: "&cYou do not have enough money!"
 max-level-reached: "&cYou reached the max Flake level!"
 self-pay: "&cYou can’t give yourself Flakes!"
 economy-not-available: "&cThe economy system is not available!"
 
-booster-item-received: "&fYou received a &#099bff%amount%x Flake Booster for &#099bff%time% &fhours!"
+booster-item-received: "&fYou received a &#009bff%amount%x Flake Booster for &#009bff%time% &fhours!"
 booster-expired: "&cYour Flake Booster has expired!"
-booster-activated: "&fYour Flake Booster is now active for &#099bff%time%&f hours!"
-booster-remaining: "&fYour Flake Booster is active for another &#099bff%time%&f!"
+booster-activated: "&fYour Flake Booster is now active for &#009bff%time%&f hours!"
+booster-remaining: "&fYour Flake Booster is active for another &#009bff%time%&f!"
 
 gui-updated: "&aFlakes GUI reloaded successfully!"
 send-flakes-chat-input: |
@@ -24,21 +24,21 @@ send-flakes-chat-input: |
   &cor type cancel to cancel the input!
 send-flakes-chat-cancel: "&cInput cancelled!"
 
-flakes-balance: "&fBalance: &#099bff%flakes% ғʟᴀᴋᴇs"
-flakes-balance-other: "&#00FF00%target% &fhas &#099bff%flakes% ғʟᴀᴋᴇs&f!"
-flakes-send: "&fYou sent &#099bff%flakes_send% ғʟᴀᴋᴇs &fto &#00FF00%player%"
-flakes-received: "&fYou received &#099bff%flakes_received% ғʟᴀᴋᴇs &ffrom &#00FF00%target_player%"
-flakes-given: "&fYou gave &#099bff%flakes_given% ғʟᴀᴋᴇs &fto &#00FF00%player%!"
-flakes-taken: "&fYou took &#099bff%flakes_taken% ғʟᴀᴋᴇs &ffrom &#00FF00%player%!"
-flakes-set: "&fYou set &#00FF00%player%&f's balance to &#099bff%flakes_set% ғʟᴀᴋᴇs!"
+flakes-balance: "&fBalance: &#009bff%flakes% ғʟᴀᴋᴇs"
+flakes-balance-other: "&#00FF00%target% &fhas &#009bff%flakes% ғʟᴀᴋᴇs&f!"
+flakes-send: "&fYou sent &#009bff%flakes_send% ғʟᴀᴋᴇs &fto &#00FF00%player%"
+flakes-received: "&fYou received &#009bff%flakes_received% ғʟᴀᴋᴇs &ffrom &#00FF00%target_player%"
+flakes-given: "&fYou gave &#009bff%flakes_given% ғʟᴀᴋᴇs &fto &#00FF00%player%!"
+flakes-taken: "&fYou took &#009bff%flakes_taken% ғʟᴀᴋᴇs &ffrom &#00FF00%player%!"
+flakes-set: "&fYou set &#00FF00%player%&f's balance to &#009bff%flakes_set% ғʟᴀᴋᴇs!"
 clear-all-success: "&aSuccessfully cleared all Flakes and levels from all players!"
 
 command-usage: |
-  &#099bff&lFLAKES
-  &#099bff➤ &f/flakes
-  &#099bff➤ &f/flakes pay <player> <amount>
-  &#099bff➤ &f/flakes bal <player>
-  &#099bff➤ &f/flakes upgrade
+  &#009bff&lFLAKES
+  &#009bff➤ &f/flakes
+  &#009bff➤ &f/flakes pay <player> <amount>
+  &#009bff➤ &f/flakes bal <player>
+  &#009bff➤ &f/flakes upgrade
 
 command-usage-admin: |
   &#FF0000&lFLAKES ADMIN
