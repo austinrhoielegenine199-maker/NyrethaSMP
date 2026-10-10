@@ -11,6 +11,8 @@ import org.bukkit.Material;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.configuration.file.YamlConfiguration;
+import com.nyretha.teams.Team;
+import com.nyretha.teams.Manager.DataManager;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -26,6 +28,7 @@ public final class Home extends JavaPlugin implements Listener {
     private final Map<UUID, Long> teleporting = new HashMap<>();
     private File homesFile;
     private YamlConfiguration data;
+    private YamlConfiguration guiMessages;
 
     @Override public void onEnable() {
         saveDefaultConfig();
@@ -34,6 +37,7 @@ public final class Home extends JavaPlugin implements Listener {
         saveResource("gui/confirm.gui.yml", false);
         homesFile = new File(getDataFolder(), "homes.yml");
         data = YamlConfiguration.loadConfiguration(homesFile);
+        guiMessages = YamlConfiguration.loadConfiguration(new File(getDataFolder(), "gui/main.gui.yml"));
         Bukkit.getPluginManager().registerEvents(this, this);
         getLogger().info("NyrethaHomes enabled.");
     }
@@ -76,16 +80,62 @@ public final class Home extends JavaPlugin implements Listener {
             meta.setDisplayName(c(data.contains(key) ? "&bHome " + n : "&7No home set"));
             item.setItemMeta(meta); inv.setItem(10 + n, item);
         }
+        inv.setItem(10, buildTeamHomeItem(p));
         p.openInventory(inv);
     }
 
     @EventHandler public void onInventoryClick(InventoryClickEvent e) {
         if (!(e.getWhoClicked() instanceof Player p) || !ChatColor.stripColor(e.getView().getTitle()).equalsIgnoreCase("Homes")) return;
         e.setCancelled(true);
-        int raw = e.getRawSlot(); if (raw < 11 || raw > 15) return;
+        int raw = e.getRawSlot();
+        if (raw == 10) {
+            Team teams = getTeamsPlugin();
+            if (teams == null) { p.sendMessage(guiMessage("team-home.messages.plugin-missing", "&cTeam homes are unavailable.")); return; }
+            DataManager team = teams.getTeamManager().getPlayerTeam(p.getName());
+            if (team == null) { p.sendMessage(guiMessage("team-home.messages.no-team", "&cYou don't have a team!")); return; }
+            if (team.getHome() == null) { p.sendMessage(guiMessage("team-home.messages.no-home", "&7Your team has no home set.")); return; }
+            Bukkit.dispatchCommand(p, "team home");
+            return;
+        }
+        if (raw < 11 || raw > 15) return;
         int n = raw - 10; String key = p.getUniqueId() + "." + n;
+        if (e.isRightClick() && data.contains(key)) {
+            data.set(key, null); saveHomes();
+            p.sendMessage(c("&aHome " + n + " deleted."));
+            openHomes(p);
+            return;
+        }
         if (data.contains(key)) teleport(p, readLocation(key), n);
         else { data.set(key, p.getLocation().serialize()); saveHomes(); p.sendMessage(c("&fHome &a" + n + " &fhas been set")); openHomes(p); }
+    }
+
+    private ItemStack buildTeamHomeItem(Player player) {
+        Team teams = getTeamsPlugin();
+        DataManager team = teams == null ? null : teams.getTeamManager().getPlayerTeam(player.getName());
+        boolean hasTeam = team != null;
+        boolean hasHome = hasTeam && team.getHome() != null;
+        String state = !hasTeam ? "no-team" : hasHome ? "set" : "unset";
+        String base = "team-home.states." + state + ".";
+        Material material;
+        try { material = Material.valueOf(guiMessages.getString(base + "material", !hasTeam ? "RED_BANNER" : hasHome ? "BLUE_BANNER" : "GRAY_BANNER")); }
+        catch (IllegalArgumentException ex) { material = !hasTeam ? Material.RED_BANNER : hasHome ? Material.BLUE_BANNER : Material.GRAY_BANNER; }
+        ItemStack item = new ItemStack(material);
+        ItemMeta meta = item.getItemMeta();
+        if (meta != null) {
+            meta.setDisplayName(c(guiMessages.getString(base + "name", !hasTeam ? "&cYou don't have a team!" : hasHome ? "&9Team Home" : "&7Team has no home")));
+            meta.setLore(guiMessages.getStringList(base + "lore").stream().map(this::c).toList());
+            item.setItemMeta(meta);
+        }
+        return item;
+    }
+
+    private Team getTeamsPlugin() {
+        org.bukkit.plugin.Plugin plugin = Bukkit.getPluginManager().getPlugin("NyrethaTeams");
+        return plugin instanceof Team team ? team : null;
+    }
+
+    private String guiMessage(String path, String fallback) {
+        return c(guiMessages == null ? fallback : guiMessages.getString(path, fallback));
     }
 
     private Location readLocation(String key) {
