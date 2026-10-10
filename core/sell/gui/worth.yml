@@ -1,1 +1,69 @@
-
+worth:
+  title: '&8ᴡᴏʀᴛʜ'
+  rows: 6
+  worth-items: 0-44
+  navigation:
+    previous-page-slot: 45
+    previous-page:
+      material: ARROW
+      displayname: '&#04fc84ᴘʀᴇᴠɪᴏᴜꜱ'
+      lore:
+        - '&fClick to go to the previous page'
+    next-page-slot: 53
+    next-page:
+      material: ARROW
+      displayname: '&#04fc84ɴᴇxᴛ'
+      lore:
+        - '&fClick to go to the next page'
+    sort-button:
+      slot: 48
+      material: CAULDRON
+      displayname: '&#04fc84ꜱᴏʀᴛɪɴɢ'
+      lore-inactive:
+        - '&f● ᴘʀɪᴄᴇ: ʜɪɢʜᴇsᴛ ғɪʀsᴛ'
+        - '&f● ᴘʀɪᴄᴇ: ʟᴏᴡᴇsᴛ ғɪʀsᴛ'
+        - '&f● ɴᴀᴍᴇ: ᴀ-ᴢ'
+        - '&f● ɴᴀᴍᴇ: ᴢ-ᴀ'
+      lore-active:
+        - '&#04fc84● ᴘʀɪᴄᴇ: ʜɪɢʜᴇsᴛ ғɪʀsᴛ'
+        - '&#04fc84● ᴘʀɪᴄᴇ: ʟᴏᴡᴇsᴛ ғɪʀsᴛ'
+        - '&#04fc84● ɴᴀᴍᴇ: ᴀ-ᴢ'
+        - '&#04fc84● ɴᴀᴍᴇ: ᴢ-ᴀ'
+    refresh:
+      slot: 49
+      material: ANVIL
+      displayname: '&#04fc84ɪᴛᴇᴍ ᴘʀɪᴄᴇꜱ'
+      lore:
+        - '&fClick to refresh'
+    filter:
+      slot: 50
+      material: HOPPER
+      displayname: '&#04fc84ꜰɪʟᴛᴇʀ'
+      lore-inactive:
+        - '&f⏺ ᴀʟʟ'
+        - '&f⏺ ʙʟᴏᴄᴋꜱ'
+        - '&f⏺ ʙᴏᴏᴋꜱ'
+        - '&f⏺ ᴄʀᴏᴘꜱ'
+        - '&f⏺ ꜰɪꜱʜ'
+        - '&f⏺ ᴍᴏʙꜱ'
+        - '&f⏺ ɴᴀᴛᴜʀᴀʟ'
+        - '&f⏺ ᴏʀᴇꜱ'
+        - '&f⏺ ᴘᴏᴛɪᴏɴꜱ'
+        - '&f⏺ ᴛᴏᴏʟꜱ'
+      lore-active:
+        - '&#04fc84⏺ ᴀʟʟ'
+        - '&#04fc84⏺ ʙʟᴏᴄᴋꜱ'
+        - '&#04fc84⏺ ʙᴏᴏᴋꜱ'
+        - '&#04fc84⏺ ᴄʀᴏᴘꜱ'
+        - '&#04fc84⏺ ꜰɪꜱʜ'
+        - '&#04fc84⏺ ᴍᴏʙꜱ'
+        - '&#04fc84⏺ ɴᴀᴛᴜʀᴀʟ'
+        - '&#04fc84⏺ ᴏʀᴇꜱ'
+        - '&#04fc84⏺ ᴘᴏᴛɪᴏɴꜱ'
+        - '&#04fc84⏺ ᴛᴏᴏʟꜱ'
+    close-button:
+      slot: -1
+  item:
+    displayname: '&f%item-name%'
+    lore:
+      - '&fPrice: &#0bf52b%price%'
