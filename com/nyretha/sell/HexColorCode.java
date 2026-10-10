@@ -1,4 +1,4 @@
-package de.elivb.sell;
+package com.nyretha.sell;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
