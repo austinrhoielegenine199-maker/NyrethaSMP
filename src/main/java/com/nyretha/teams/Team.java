@@ -1,14 +1,14 @@
-package de.elivb.teams;
+package com.nyretha.teams;
 
-import de.elivb.teams.GUI.MemberManagerGUI;
-import de.elivb.teams.GUI.TeamGUI;
-import de.elivb.teams.Manager.DataManager;
-import de.elivb.teams.Manager.HomeManager;
-import de.elivb.teams.Manager.LangManager;
-import de.elivb.teams.Manager.SignManager;
-import de.elivb.teams.Manager.SoundManager;
-import de.elivb.teams.Manager.TeamManager;
-import de.elivb.teams.Manager.TeamRankManager;
+import com.nyretha.teams.GUI.MemberManagerGUI;
+import com.nyretha.teams.GUI.TeamGUI;
+import com.nyretha.teams.Manager.DataManager;
+import com.nyretha.teams.Manager.HomeManager;
+import com.nyretha.teams.Manager.LangManager;
+import com.nyretha.teams.Manager.SignManager;
+import com.nyretha.teams.Manager.SoundManager;
+import com.nyretha.teams.Manager.TeamManager;
+import com.nyretha.teams.Manager.TeamRankManager;
 import io.papermc.paper.threadedregions.scheduler.ScheduledTask;
 import java.util.ArrayList;
 import java.util.Arrays;

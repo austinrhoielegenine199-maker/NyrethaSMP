@@ -1,6 +1,6 @@
 name: NyrethaSMP
 version: 1.0.0
-main: com.nyretha.core.Core
+main: com.nyretha.Core
 api-version: '1.21'
 author: NyrethaSMP
 description: Unified NyrethaSMP plugin core

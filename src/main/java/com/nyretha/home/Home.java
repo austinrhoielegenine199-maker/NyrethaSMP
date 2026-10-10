@@ -1,14 +1,14 @@
-package de.elivb.homes;
+package com.nyretha.home;
 
-import de.elivb.homes.Command.HomeCommand;
-import de.elivb.homes.GUI.MainGUI;
-import de.elivb.homes.Listener.PlayerJoinListener;
-import de.elivb.homes.Manager.ChatManager;
-import de.elivb.homes.Manager.DataManager;
-import de.elivb.homes.Manager.GUIManager;
-import de.elivb.homes.Manager.LangManager;
-import de.elivb.homes.Manager.SignManager;
-import de.elivb.homes.Manager.SoundManager;
+import com.nyretha.home.Command.HomeCommand;
+import com.nyretha.home.GUI.MainGUI;
+import com.nyretha.home.Listener.PlayerJoinListener;
+import com.nyretha.home.Manager.ChatManager;
+import com.nyretha.home.Manager.DataManager;
+import com.nyretha.home.Manager.GUIManager;
+import com.nyretha.home.Manager.LangManager;
+import com.nyretha.home.Manager.SignManager;
+import com.nyretha.home.Manager.SoundManager;
 import io.papermc.paper.threadedregions.scheduler.ScheduledTask;
 import java.util.concurrent.TimeUnit;
 import org.bukkit.Bukkit;
