@@ -20,3 +20,5 @@ sign-gui:
   - '↑↑↑↑↑↑↑↑↑↑↑↑↑'
   - '    Name    '
   - '             '
+# Right-click a set personal home in /home to delete it.
+# Team home is managed by the Teams module with /team sethome and /team home.
