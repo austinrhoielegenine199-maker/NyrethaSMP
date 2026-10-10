@@ -300,7 +300,7 @@ public class ProgressGUI implements InventoryHolder {
    }
 
    public static void loadConfig() {
-      File configFile = new File("plugins/Sell/gui/progress.gui.yml");
+      File configFile = new File("plugins/NyrethaSMP/sell/gui/progress.gui.yml");
 
       try {
          if (!configFile.exists()) {
@@ -447,7 +447,7 @@ public class ProgressGUI implements InventoryHolder {
             }
          }
 
-         File mainConfig = new File("plugins/Sell/config.yml");
+         File mainConfig = new File("plugins/NyrethaSMP/sell/config.yml");
          if (mainConfig.exists()) {
             YamlConfiguration mainCfg = YamlConfiguration.loadConfiguration(mainConfig);
             progressBarLoadingColor = mainCfg.getString("progress-bar.loading-color", "&f");
