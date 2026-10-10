@@ -39,7 +39,17 @@
     <plugins>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId><artifactId>maven-compiler-plugin</artifactId><version>3.13.0</version>
-        <configuration><release>21</release></configuration>
+        <configuration>
+          <release>21</release>
+          <!-- Legacy modules are excluded until their mismatched APIs are migrated into Core. -->
+          <excludes>
+            <exclude>com/nyretha/flakes/**</exclude>
+            <exclude>com/nyretha/rtp/**</exclude>
+            <exclude>com/nyretha/sell/**</exclude>
+            <exclude>com/nyretha/teams/**</exclude>
+            <exclude>com/nyretha/tools/**</exclude>
+          </excludes>
+        </configuration>
       </plugin>
     </plugins>
   </build>
