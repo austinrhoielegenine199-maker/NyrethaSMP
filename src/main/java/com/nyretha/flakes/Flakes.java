@@ -58,7 +58,7 @@ public class Flakes extends JavaPlugin implements Listener {
    private List<String> enabledWorlds;
    private List<String> enabledRegions;
    private Economy economy;
-   private LicenseManager licenseManager;
+
    private boolean isFolia = false;
    private boolean worldGuardEnabled = false;
    private RegionContainer regionContainer;
@@ -72,15 +72,12 @@ public class Flakes extends JavaPlugin implements Listener {
          this.isFolia = false;
       }
 
-      this.licenseManager = new LicenseManager(this);
-      if (this.licenseManager.validateLicenseOnStartup()) {
+      
          this.runTaskLater(this::initializeAfterPluginsLoaded, 1L);
-      }
+      
    }
 
-   public LicenseManager getLicenseManager() {
-      return this.licenseManager;
-   }
+   
 
    public boolean isFolia() {
       return this.isFolia;
