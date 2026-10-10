@@ -1,4 +1,4 @@
-package de.elivb.sell.models;
+package com.nyretha.sell.models;
 
 import java.util.HashMap;
 import java.util.Map;
