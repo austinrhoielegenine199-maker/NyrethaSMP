@@ -1,6 +1,6 @@
-package de.elivb.sell.manager;
+package com.nyretha.sell.manager;
 
-import de.elivb.sell.models.PriceModel;
+import com.nyretha.sell.models.PriceModel;
 import java.io.File;
 import java.io.InputStream;
 import java.nio.file.CopyOption;
