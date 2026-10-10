@@ -1,13 +1,13 @@
-package de.elivb.sell.manager;
+package com.nyretha.sell.manager;
 
-import de.elivb.sell.HexColorCode;
-import de.elivb.sell.Sell;
-import de.elivb.sell.gui.MainGUI;
-import de.elivb.sell.gui.ProgressGUI;
-import de.elivb.sell.gui.ProgressItemListGUI;
-import de.elivb.sell.gui.SellHistoryGUI;
-import de.elivb.sell.gui.WorthGUI;
-import de.elivb.sell.utils.CurrencyFormatter;
+import com.nyretha.sell.HexColorCode;
+import com.nyretha.sell.Sell;
+import com.nyretha.sell.gui.MainGUI;
+import com.nyretha.sell.gui.ProgressGUI;
+import com.nyretha.sell.gui.ProgressItemListGUI;
+import com.nyretha.sell.gui.SellHistoryGUI;
+import com.nyretha.sell.gui.WorthGUI;
+import com.nyretha.sell.utils.CurrencyFormatter;
 import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.HashMap;
