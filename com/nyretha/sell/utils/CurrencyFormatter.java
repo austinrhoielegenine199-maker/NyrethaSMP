@@ -1,4 +1,4 @@
-package de.elivb.sell.utils;
+package com.nyretha.sell.utils;
 
 import java.text.DecimalFormat;
 import java.text.DecimalFormatSymbols;
