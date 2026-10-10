@@ -1,4 +1,4 @@
-package de.elivb.shards;
+package com.nyretha.flakes;
 
 import com.sk89q.worldedit.bukkit.BukkitAdapter;
 import com.sk89q.worldguard.WorldGuard;
@@ -6,16 +6,16 @@ import com.sk89q.worldguard.protection.ApplicableRegionSet;
 import com.sk89q.worldguard.protection.regions.ProtectedRegion;
 import com.sk89q.worldguard.protection.regions.RegionContainer;
 import com.sk89q.worldguard.protection.regions.RegionQuery;
-import de.elivb.shards.Command.GemsCommand;
-import de.elivb.shards.GUI.Main;
-import de.elivb.shards.GUI.PayGUI;
-import de.elivb.shards.GUI.UpgradeGUI;
-import de.elivb.shards.Manager.DatabaseManager;
-import de.elivb.shards.Manager.GemManager;
-import de.elivb.shards.Manager.LangManager;
-import de.elivb.shards.Manager.ShardBoosterManager;
-import de.elivb.shards.Manager.SoundManager;
-import de.elivb.shards.Utlis.papi1;
+import com.nyretha.flakes.Command.GemsCommand;
+import com.nyretha.flakes.GUI.Main;
+import com.nyretha.flakes.GUI.PayGUI;
+import com.nyretha.flakes.GUI.UpgradeGUI;
+import com.nyretha.flakes.Manager.DatabaseManager;
+import com.nyretha.flakes.Manager.GemManager;
+import com.nyretha.flakes.Manager.LangManager;
+import com.nyretha.flakes.Manager.ShardBoosterManager;
+import com.nyretha.flakes.Manager.SoundManager;
+import com.nyretha.flakes.Utlis.papi1;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Field;
 import java.util.ArrayList;
@@ -44,7 +44,7 @@ import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.RegisteredServiceProvider;
 import org.bukkit.plugin.java.JavaPlugin;
 
-public class GemsPlugin extends JavaPlugin implements Listener {
+public class Flakes extends JavaPlugin implements Listener {
    private DatabaseManager databaseManager;
    private UpgradeGUI upgradeGUI;
    private LangManager langManager;
@@ -58,7 +58,7 @@ public class GemsPlugin extends JavaPlugin implements Listener {
    private List<String> enabledWorlds;
    private List<String> enabledRegions;
    private Economy economy;
-   private LicenseManager licenseManager;
+
    private boolean isFolia = false;
    private boolean worldGuardEnabled = false;
    private RegionContainer regionContainer;
@@ -72,15 +72,12 @@ public class GemsPlugin extends JavaPlugin implements Listener {
          this.isFolia = false;
       }
 
-      this.licenseManager = new LicenseManager(this);
-      if (this.licenseManager.validateLicenseOnStartup()) {
+      
          this.runTaskLater(this::initializeAfterPluginsLoaded, 1L);
-      }
+      
    }
 
-   public LicenseManager getLicenseManager() {
-      return this.licenseManager;
-   }
+   
 
    public boolean isFolia() {
       return this.isFolia;
@@ -586,7 +583,7 @@ public class GemsPlugin extends JavaPlugin implements Listener {
 
    }
 
-   public static GemsPlugin getInstance() {
-      return (GemsPlugin)getPlugin(GemsPlugin.class);
+   public static Flakes getInstance() {
+      return (Flakes)getPlugin(Flakes.class);
    }
 }

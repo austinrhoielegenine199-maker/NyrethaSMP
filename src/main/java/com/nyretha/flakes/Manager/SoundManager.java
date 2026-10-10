@@ -1,6 +1,6 @@
 package com.nyretha.flakes.Manager;
 
-import com.nyretha.flakes.GemsPlugin;
+import com.nyretha.flakes.Flakes;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
@@ -10,11 +10,11 @@ import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.entity.Player;
 
 public class SoundManager {
-   private final GemsPlugin plugin;
+   private final Flakes plugin;
    private final FileConfiguration config;
    private final Map<String, Sound> soundCache = new HashMap();
 
-   public SoundManager(GemsPlugin plugin) {
+   public SoundManager(Flakes plugin) {
       this.plugin = plugin;
       this.config = plugin.getConfig();
       this.initializeSoundCache();

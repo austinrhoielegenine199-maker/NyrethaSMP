@@ -1,8 +1,8 @@
-package de.elivb.rTP;
+package com.nyretha.rtp;
 
-import de.elivb.rTP.Manager.RTPManager;
-import de.elivb.rTP.gui.QueueGUI;
-import de.elivb.rTP.gui.RTPGui;
+import com.nyretha.rtp.Manager.RTPManager;
+import com.nyretha.rtp.gui.QueueGUI;
+import com.nyretha.rtp.gui.RTPGui;
 import io.papermc.paper.threadedregions.scheduler.ScheduledTask;
 import java.io.File;
 import java.util.ArrayList;
@@ -27,11 +27,10 @@ public class RTP extends JavaPlugin implements TabCompleter {
    private FileConfiguration langConfig;
    private final ConcurrentHashMap<Integer, ScheduledTask> runningTasks = new ConcurrentHashMap();
    private final AtomicInteger taskCounter = new AtomicInteger(0);
-   private LicenseManager licenseManager;
 
    public void onEnable() {
-      this.licenseManager = new LicenseManager(this);
-      if (this.licenseManager.validateLicenseOnStartup()) {
+
+      
          if (!this.getDataFolder().exists()) {
             boolean created = this.getDataFolder().mkdirs();
             if (!created) {
@@ -70,12 +69,10 @@ public class RTP extends JavaPlugin implements TabCompleter {
             });
          }
 
-      }
+      
    }
 
-   public LicenseManager getLicenseManager() {
-      return this.licenseManager;
-   }
+   
 
    private void saveDefaultLangConfig() {
       File langFile = new File(this.getDataFolder(), "lang.yml");

@@ -1,14 +1,14 @@
-package de.elivb.teams;
+package com.nyretha.teams;
 
-import de.elivb.teams.GUI.MemberManagerGUI;
-import de.elivb.teams.GUI.TeamGUI;
-import de.elivb.teams.Manager.DataManager;
-import de.elivb.teams.Manager.HomeManager;
-import de.elivb.teams.Manager.LangManager;
-import de.elivb.teams.Manager.SignManager;
-import de.elivb.teams.Manager.SoundManager;
-import de.elivb.teams.Manager.TeamManager;
-import de.elivb.teams.Manager.TeamRankManager;
+import com.nyretha.teams.GUI.MemberManagerGUI;
+import com.nyretha.teams.GUI.TeamGUI;
+import com.nyretha.teams.Manager.DataManager;
+import com.nyretha.teams.Manager.HomeManager;
+import com.nyretha.teams.Manager.LangManager;
+import com.nyretha.teams.Manager.SignManager;
+import com.nyretha.teams.Manager.SoundManager;
+import com.nyretha.teams.Manager.TeamManager;
+import com.nyretha.teams.Manager.TeamRankManager;
 import io.papermc.paper.threadedregions.scheduler.ScheduledTask;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -42,12 +42,12 @@ public class Team extends JavaPlugin implements Listener, TabCompleter {
    private SignManager signManager;
    private Map<String, DataManager> playerTeams;
    private boolean isFolia;
-   private LicenseManager licenseManager;
+
    private Set<UUID> teamChatEnabled;
 
    public void onEnable() {
-      this.licenseManager = new LicenseManager(this);
-      if (this.licenseManager.validateLicenseOnStartup()) {
+
+      
          this.saveDefaultConfig();
          this.reloadConfig();
          this.isFolia = this.checkFolia();
@@ -71,7 +71,7 @@ public class Team extends JavaPlugin implements Listener, TabCompleter {
             (new Papi1(this)).register();
          }
 
-      }
+      
    }
 
    private boolean checkFolia() {
@@ -104,9 +104,7 @@ public class Team extends JavaPlugin implements Listener, TabCompleter {
 
    }
 
-   public LicenseManager getLicenseManager() {
-      return this.licenseManager;
-   }
+   
 
    private boolean isTeamHomeEnabled() {
       return this.getConfig().getBoolean("team-home.enabled", true);

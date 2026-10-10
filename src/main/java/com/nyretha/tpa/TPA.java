@@ -1,17 +1,17 @@
-package de.elivb.tPA;
+package com.nyretha.tpa;
 
-import de.elivb.tPA.Manager.ConfigManager;
-import de.elivb.tPA.Manager.DataManager;
-import de.elivb.tPA.Manager.GUIManager;
-import de.elivb.tPA.Manager.GUIToggleManager;
-import de.elivb.tPA.Manager.LanguageManager;
-import de.elivb.tPA.Manager.SoundManager;
-import de.elivb.tPA.Manager.TPARequest;
-import de.elivb.tPA.Manager.TPAutoManager;
-import de.elivb.tPA.gui.TPAAcceptGUI;
-import de.elivb.tPA.gui.TPAHereAcceptGUI;
-import de.elivb.tPA.gui.TPAHereSendGUI;
-import de.elivb.tPA.gui.TPASendGUI;
+import com.nyretha.tpa.Manager.ConfigManager;
+import com.nyretha.tpa.Manager.DataManager;
+import com.nyretha.tpa.Manager.GUIManager;
+import com.nyretha.tpa.Manager.GUIToggleManager;
+import com.nyretha.tpa.Manager.LanguageManager;
+import com.nyretha.tpa.Manager.SoundManager;
+import com.nyretha.tpa.Manager.TPARequest;
+import com.nyretha.tpa.Manager.TPAutoManager;
+import com.nyretha.tpa.gui.TPAAcceptGUI;
+import com.nyretha.tpa.gui.TPAHereAcceptGUI;
+import com.nyretha.tpa.gui.TPAHereSendGUI;
+import com.nyretha.tpa.gui.TPASendGUI;
 import io.papermc.paper.threadedregions.scheduler.ScheduledTask;
 import java.lang.reflect.Method;
 import java.util.ArrayList;
@@ -51,7 +51,7 @@ public class TPA extends JavaPlugin implements Listener {
    private GUIManager guiManager;
    private SoundManager soundManager;
    private DataManager dataManager;
-   private LicenseManager licenseManager;
+
    private GUIToggleManager guiToggleManager;
    private TPAutoManager tpaAutoManager;
 
@@ -63,8 +63,8 @@ public class TPA extends JavaPlugin implements Listener {
       this.teleportLocations = new HashMap();
       this.teleportTasks = new HashMap();
       this.timeoutTasks = new HashMap();
-      this.licenseManager = new LicenseManager(this);
-      if (this.licenseManager.validateLicenseOnStartup()) {
+
+      
          if (!this.getDataFolder().exists()) {
             this.getDataFolder().mkdirs();
          }
@@ -84,7 +84,7 @@ public class TPA extends JavaPlugin implements Listener {
          this.guiToggleManager.loadGuiModes();
          this.tpaAutoManager.loadAutoAcceptStatus();
          this.getServer().getPluginManager().registerEvents(this, this);
-      }
+      
    }
 
    public void onDisable() {
@@ -134,9 +134,7 @@ public class TPA extends JavaPlugin implements Listener {
       this.dataManager.closeConnection();
    }
 
-   public LicenseManager getLicenseManager() {
-      return this.licenseManager;
-   }
+   
 
    @EventHandler
    public void onPlayerQuit(PlayerQuitEvent event) {
