@@ -1,0 +1,57 @@
+name: NyrethaSMP
+version: 1.0.0
+main: com.nyretha.core.Core
+api-version: '1.21'
+author: NyrethaSMP
+description: Unified NyrethaSMP plugin core
+softdepend:
+  - PlaceholderAPI
+  - Vault
+  - WorldGuard
+  - WorldEdit
+commands:
+  home:
+    aliases: [homes]
+  sethome:
+  delhome:
+  team:
+    aliases: [teams]
+  tool:
+    aliases: [tools, dt]
+    permission: tools.admin
+  tpa:
+  tpahere:
+  tpaccept:
+  tpadeny:
+  tpacancel:
+  tpatoggle:
+  tpaheretoggle:
+  tpareload:
+  tpagui:
+  tpaheregui:
+  tpauto:
+  tpahereauto:
+  rtp:
+  rtpqueue:
+    aliases: [rtpq]
+permissions:
+  home.reload:
+    default: op
+  home.bypass:
+    default: op
+  home.others:
+    default: op
+  team.admin:
+    default: op
+  team.home.bypass:
+    default: false
+  tools.admin:
+    default: op
+  tpa.admin:
+    default: op
+  rtp.use:
+    default: true
+  rtp.admin:
+    default: op
+  rtp.bypass:
+    default: op
