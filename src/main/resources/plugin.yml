@@ -14,6 +14,9 @@ commands:
     aliases: [homes]
   sethome:
   delhome:
+  flakes:
+    description: View or manage Flakes currency
+    usage: /flakes [balance|take <player> <amount>]
   team:
     aliases: [teams]
   tool:
@@ -40,6 +43,8 @@ permissions:
   home.bypass:
     default: op
   home.others:
+    default: op
+  flakes.admin:
     default: op
   team.admin:
     default: op
