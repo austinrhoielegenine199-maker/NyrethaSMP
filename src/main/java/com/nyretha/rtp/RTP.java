@@ -1,8 +1,8 @@
-package de.elivb.rTP;
+package com.nyretha.rtp;
 
-import de.elivb.rTP.Manager.RTPManager;
-import de.elivb.rTP.gui.QueueGUI;
-import de.elivb.rTP.gui.RTPGui;
+import com.nyretha.rtp.Manager.RTPManager;
+import com.nyretha.rtp.gui.QueueGUI;
+import com.nyretha.rtp.gui.RTPGui;
 import io.papermc.paper.threadedregions.scheduler.ScheduledTask;
 import java.io.File;
 import java.util.ArrayList;
