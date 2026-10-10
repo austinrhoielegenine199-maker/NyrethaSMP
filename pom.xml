@@ -1,0 +1,21 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.nyretha</groupId>
+    <artifactId>NyrethaSMP</artifactId>
+    <packaging>pom</packaging>
+    <version>1.0-SNAPSHOT</version>
+
+    <modules>
+        <module>core/rtp</module>
+        <module>core/homes</module>
+        <module>core/flakes</module>
+        <module>core/sell</module>
+        <module>core/shop</module>
+        <module>core/teams</module>
+        <module>core/tools</module>
+        <module>core/tpa</module>
+    </modules>
+</project>
