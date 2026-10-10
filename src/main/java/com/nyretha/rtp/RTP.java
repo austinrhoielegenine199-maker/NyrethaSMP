@@ -27,11 +27,10 @@ public class RTP extends JavaPlugin implements TabCompleter {
    private FileConfiguration langConfig;
    private final ConcurrentHashMap<Integer, ScheduledTask> runningTasks = new ConcurrentHashMap();
    private final AtomicInteger taskCounter = new AtomicInteger(0);
-   private LicenseManager licenseManager;
 
    public void onEnable() {
-      this.licenseManager = new LicenseManager(this);
-      if (this.licenseManager.validateLicenseOnStartup()) {
+
+      
          if (!this.getDataFolder().exists()) {
             boolean created = this.getDataFolder().mkdirs();
             if (!created) {
@@ -70,12 +69,10 @@ public class RTP extends JavaPlugin implements TabCompleter {
             });
          }
 
-      }
+      
    }
 
-   public LicenseManager getLicenseManager() {
-      return this.licenseManager;
-   }
+   
 
    private void saveDefaultLangConfig() {
       File langFile = new File(this.getDataFolder(), "lang.yml");

@@ -51,7 +51,7 @@ public class TPA extends JavaPlugin implements Listener {
    private GUIManager guiManager;
    private SoundManager soundManager;
    private DataManager dataManager;
-   private LicenseManager licenseManager;
+
    private GUIToggleManager guiToggleManager;
    private TPAutoManager tpaAutoManager;
 
@@ -63,8 +63,8 @@ public class TPA extends JavaPlugin implements Listener {
       this.teleportLocations = new HashMap();
       this.teleportTasks = new HashMap();
       this.timeoutTasks = new HashMap();
-      this.licenseManager = new LicenseManager(this);
-      if (this.licenseManager.validateLicenseOnStartup()) {
+
+      
          if (!this.getDataFolder().exists()) {
             this.getDataFolder().mkdirs();
          }
@@ -84,7 +84,7 @@ public class TPA extends JavaPlugin implements Listener {
          this.guiToggleManager.loadGuiModes();
          this.tpaAutoManager.loadAutoAcceptStatus();
          this.getServer().getPluginManager().registerEvents(this, this);
-      }
+      
    }
 
    public void onDisable() {
@@ -134,9 +134,7 @@ public class TPA extends JavaPlugin implements Listener {
       this.dataManager.closeConnection();
    }
 
-   public LicenseManager getLicenseManager() {
-      return this.licenseManager;
-   }
+   
 
    @EventHandler
    public void onPlayerQuit(PlayerQuitEvent event) {

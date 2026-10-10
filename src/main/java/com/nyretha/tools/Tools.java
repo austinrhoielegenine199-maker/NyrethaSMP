@@ -40,7 +40,7 @@ public class Tools extends JavaPlugin implements TabCompleter {
    private LavaBucket lavaBucket;
    private ToolsGUI toolsGUI;
    private ToolExpiryChecker expiryChecker;
-   private LicenseManager licenseManager;
+
    private PlotService plotService;
    private boolean isFolia = false;
    private List<Material> blacklistedBlocks = null;
@@ -54,8 +54,7 @@ public class Tools extends JavaPlugin implements TabCompleter {
          this.isFolia = false;
       }
 
-      this.licenseManager = new LicenseManager(this);
-      if (this.licenseManager.validateLicenseOnStartup()) {
+      
          this.plotService = new PlotService(this);
          this.toolsFolder = new File(this.getDataFolder(), "Tools");
          if (!this.toolsFolder.exists()) {
@@ -98,7 +97,7 @@ public class Tools extends JavaPlugin implements TabCompleter {
             this.getLogger().warning(this.getLang("error-command-not-found"));
          }
 
-      }
+      
    }
 
    public void onDisable() {
@@ -108,9 +107,7 @@ public class Tools extends JavaPlugin implements TabCompleter {
 
    }
 
-   public LicenseManager getLicenseManager() {
-      return this.licenseManager;
-   }
+   
 
    public PlotService getPlotService() {
       if (this.plotService == null) {

@@ -24,14 +24,14 @@ public class Home extends JavaPlugin {
    private SoundManager soundManager;
    private GUIManager guiManager;
    private DataManager dataManager;
-   private LicenseManager licenseManager;
+
    private ChatManager chatManager;
    private SignManager signManager;
    private boolean isFolia;
 
    public void onEnable() {
-      this.licenseManager = new LicenseManager(this);
-      if (this.licenseManager.validateLicenseOnStartup()) {
+
+      
          instance = this;
 
          try {
@@ -81,12 +81,10 @@ public class Home extends JavaPlugin {
          if (Bukkit.getPluginManager().getPlugin("WorldGuard") != null) {
          }
 
-      }
+      
    }
 
-   public LicenseManager getLicenseManager() {
-      return this.licenseManager;
-   }
+   
 
    public void onDisable() {
       for(Player player : Bukkit.getOnlinePlayers()) {

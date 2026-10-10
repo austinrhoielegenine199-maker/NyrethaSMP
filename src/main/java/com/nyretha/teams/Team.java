@@ -42,12 +42,12 @@ public class Team extends JavaPlugin implements Listener, TabCompleter {
    private SignManager signManager;
    private Map<String, DataManager> playerTeams;
    private boolean isFolia;
-   private LicenseManager licenseManager;
+
    private Set<UUID> teamChatEnabled;
 
    public void onEnable() {
-      this.licenseManager = new LicenseManager(this);
-      if (this.licenseManager.validateLicenseOnStartup()) {
+
+      
          this.saveDefaultConfig();
          this.reloadConfig();
          this.isFolia = this.checkFolia();
@@ -71,7 +71,7 @@ public class Team extends JavaPlugin implements Listener, TabCompleter {
             (new Papi1(this)).register();
          }
 
-      }
+      
    }
 
    private boolean checkFolia() {
@@ -104,9 +104,7 @@ public class Team extends JavaPlugin implements Listener, TabCompleter {
 
    }
 
-   public LicenseManager getLicenseManager() {
-      return this.licenseManager;
-   }
+   
 
    private boolean isTeamHomeEnabled() {
       return this.getConfig().getBoolean("team-home.enabled", true);
