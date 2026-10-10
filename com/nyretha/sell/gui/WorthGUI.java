@@ -874,7 +874,7 @@ public class WorthGUI implements InventoryHolder {
 
       static ConfigCache load() {
          ConfigCache c = new ConfigCache();
-         File configFile = new File("plugins/Sell/gui/worth.yml");
+         File configFile = new File("plugins/NyrethaSMP/sell/gui/worth.yml");
 
          try {
             if (!configFile.exists()) {
