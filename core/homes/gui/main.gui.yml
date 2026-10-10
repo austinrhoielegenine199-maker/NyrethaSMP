@@ -30,3 +30,28 @@ no-permission:
     name: "&#FF0000ɴᴏ ᴘᴇʀᴍɪꜱꜱɪᴏɴ"
     material: "RED_DYE"
     lore: ["&fBuy &#0044FCDonut+ &fin /store for more homes"]
+
+# Team home button occupies raw inventory slot 10 (zero-indexed).
+team-home:
+  slot: 10
+  states:
+    no-team:
+      material: "RED_BANNER"
+      name: "&cYou don't have a team!"
+      lore:
+        - "&7Join or create a team first."
+    unset:
+      material: "GRAY_BANNER"
+      name: "&7Team Home"
+      lore:
+        - "&7Your team has not set a home yet."
+        - "&fA team leader can use &b/team sethome"
+    set:
+      material: "BLUE_BANNER"
+      name: "&9Team Home"
+      lore:
+        - "&fClick to teleport to your team home."
+  messages:
+    no-team: "&cYou don't have a team!"
+    no-home: "&7Your team has no home set."
+    plugin-missing: "&cTeam homes are unavailable."
