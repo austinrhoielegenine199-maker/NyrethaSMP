@@ -1,62 +1,34 @@
 name: NyrethaSMP
-version: 1.0.0
+version: '1.0.0'
 main: com.nyretha.Core
 api-version: '1.21'
 author: NyrethaSMP
-description: Unified NyrethaSMP plugin core
-softdepend:
-  - PlaceholderAPI
-  - Vault
-  - WorldGuard
-  - WorldEdit
+description: NyrethaSMP Core - homes and Flakes balance
+
 commands:
   home:
+    description: Teleport to your saved home
+    usage: /home [name]
     aliases: [homes]
   sethome:
+    description: Save your current location as a home
+    usage: /sethome [name]
   delhome:
+    description: Delete a saved home
+    usage: /delhome [name]
   flakes:
-    description: View or manage Flakes currency
-    usage: /flakes [balance|take <player> <amount>]
-  team:
-    aliases: [teams]
-  tool:
-    aliases: [tools, dt]
-    permission: tools.admin
-  tpa:
-  tpahere:
-  tpaccept:
-  tpadeny:
-  tpacancel:
-  tpatoggle:
-  tpaheretoggle:
-  tpareload:
-  tpagui:
-  tpaheregui:
-  tpauto:
-  tpahereauto:
-  rtp:
-  rtpqueue:
-    aliases: [rtpq]
+    description: View your Flakes balance or remove Flakes as an admin
+    usage: /flakes [balance] | /flakes take <player> <amount>
+    permission: flakes.use
+    permission-message: You do not have permission to use this command.
+
 permissions:
-  home.reload:
-    default: op
-  home.bypass:
-    default: op
-  home.others:
-    default: op
-  flakes.admin:
-    default: op
-  team.admin:
-    default: op
-  team.home.bypass:
-    default: false
-  tools.admin:
-    default: op
-  tpa.admin:
-    default: op
-  rtp.use:
+  flakes.use:
+    description: Allows viewing your own Flakes balance
     default: true
-  rtp.admin:
+  flakes.admin:
+    description: Allows removing Flakes from online players
     default: op
-  rtp.bypass:
-    default: op
+  home.use:
+    description: Allows using home commands
+    default: true

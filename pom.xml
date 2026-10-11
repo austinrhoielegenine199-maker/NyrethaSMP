@@ -1,55 +1,112 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
+
   <groupId>com.nyretha</groupId>
   <artifactId>nyretha-smp</artifactId>
   <version>1.0.0</version>
+  <packaging>jar</packaging>
   <name>NyrethaSMP</name>
+  <description>NyrethaSMP Paper server plugin</description>
+
   <properties>
-    <maven.compiler.release>21</maven.compiler.release>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <maven.compiler.release>21</maven.compiler.release>
   </properties>
+
   <repositories>
-    <repository><id>papermc</id><url>https://repo.papermc.io/repository/maven-public/</url></repository>
-    <repository><id>placeholderapi</id><url>https://repo.extendedclip.com/content/repositories/placeholderapi/</url></repository>
-    <repository><id>enginehub</id><url>https://maven.enginehub.org/repo/</url></repository>
-    <repository><id>jitpack</id><url>https://jitpack.io</url></repository>
+    <repository>
+      <id>papermc</id>
+      <url>https://repo.papermc.io/repository/maven-public/</url>
+    </repository>
+    <repository>
+      <id>placeholderapi</id>
+      <url>https://repo.extendedclip.com/content/repositories/placeholderapi/</url>
+    </repository>
+    <repository>
+      <id>enginehub</id>
+      <url>https://maven.enginehub.org/repo/</url>
+    </repository>
+    <repository>
+      <id>jitpack</id>
+      <url>https://jitpack.io</url>
+    </repository>
   </repositories>
+
   <dependencies>
+    <!-- The server provides Paper/Bukkit; do not package the server API in the plugin JAR. -->
     <dependency>
-      <groupId>io.papermc.paper</groupId><artifactId>paper-api</artifactId><version>1.21.4-R0.1-SNAPSHOT</version><scope>provided</scope>
+      <groupId>io.papermc.paper</groupId>
+      <artifactId>paper-api</artifactId>
+      <version>1.21.4-R0.1-SNAPSHOT</version>
+      <scope>provided</scope>
     </dependency>
     <dependency>
-      <groupId>me.clip</groupId><artifactId>placeholderapi</artifactId><version>2.11.6</version><scope>provided</scope>
+      <groupId>me.clip</groupId>
+      <artifactId>placeholderapi</artifactId>
+      <version>2.11.6</version>
+      <scope>provided</scope>
     </dependency>
     <dependency>
-      <groupId>com.github.MilkBowl</groupId><artifactId>VaultAPI</artifactId><version>1.7</version><scope>provided</scope>
+      <groupId>com.github.MilkBowl</groupId>
+      <artifactId>VaultAPI</artifactId>
+      <version>1.7</version>
+      <scope>provided</scope>
     </dependency>
     <dependency>
-      <groupId>com.sk89q.worldguard</groupId><artifactId>worldguard-bukkit</artifactId><version>7.0.13</version><scope>provided</scope>
+      <groupId>com.sk89q.worldguard</groupId>
+      <artifactId>worldguard-bukkit</artifactId>
+      <version>7.0.13</version>
+      <scope>provided</scope>
     </dependency>
     <dependency>
-      <groupId>com.sk89q.worldedit</groupId><artifactId>worldedit-bukkit</artifactId><version>7.3.10</version><scope>provided</scope>
+      <groupId>com.sk89q.worldedit</groupId>
+      <artifactId>worldedit-bukkit</artifactId>
+      <version>7.3.10</version>
+      <scope>provided</scope>
     </dependency>
   </dependencies>
+
   <build>
+    <finalName>NyrethaSMP</finalName>
     <sourceDirectory>src/main/java</sourceDirectory>
-    <resources><resource><directory>src/main/resources</directory></resource></resources>
+    <resources>
+      <resource>
+        <directory>src/main/resources</directory>
+        <filtering>false</filtering>
+      </resource>
+    </resources>
     <plugins>
       <plugin>
-        <groupId>org.apache.maven.plugins</groupId><artifactId>maven-compiler-plugin</artifactId><version>3.13.0</version>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>3.13.0</version>
         <configuration>
-          <release>21</release>
-          <!-- Legacy modules are excluded until their mismatched APIs are migrated into Core. -->
+          <release>${maven.compiler.release}</release>
+          <!-- These legacy modules currently contain incompatible APIs and are not yet integrated with Core.
+               Keep the current Core build reliable rather than shipping a falsely "complete" broken build. -->
           <excludes>
-            <exclude>com/nyretha/flakes/**</exclude>
-            <exclude>com/nyretha/rtp/**</exclude>
-            <exclude>com/nyretha/sell/**</exclude>
-            <exclude>com/nyretha/teams/**</exclude>
-            <exclude>com/nyretha/tools/**</exclude>
+            <exclude>**/flakes/**</exclude>
+            <exclude>**/rtp/**</exclude>
+            <exclude>**/sell/**</exclude>
+            <exclude>**/teams/**</exclude>
+            <exclude>**/tools/**</exclude>
+            <exclude>**/tpa/**</exclude>
+            <exclude>**/home/**</exclude>
           </excludes>
         </configuration>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-resources-plugin</artifactId>
+        <version>3.3.1</version>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-jar-plugin</artifactId>
+        <version>3.4.2</version>
       </plugin>
     </plugins>
   </build>
