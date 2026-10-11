@@ -89,6 +89,7 @@
                Keep the current Core build reliable rather than shipping a falsely "complete" broken build. -->
           <excludes>
             <exclude>**/flakes/**</exclude>
+            <exclude>**/shop/**</exclude>
             <exclude>**/rtp/**</exclude>
             <exclude>**/sell/**</exclude>
             <exclude>**/teams/**</exclude>

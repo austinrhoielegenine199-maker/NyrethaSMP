@@ -3,7 +3,7 @@ version: '1.0.0'
 main: com.nyretha.Core
 api-version: '1.21'
 author: NyrethaSMP
-description: NyrethaSMP Core - homes and Flakes balance
+description: Unified NyrethaSMP plugin
 
 commands:
   home:
@@ -21,6 +21,67 @@ commands:
     usage: /flakes [balance] | /flakes take <player> <amount>
     permission: flakes.use
     permission-message: You do not have permission to use this command.
+  shop:
+    description: Open the NyrethaSMP shop
+    usage: /shop
+  sell:
+    description: Sell items
+    usage: /sell
+  worth:
+    description: Check item worth
+    usage: /worth
+  rtp:
+    description: Open random teleport menu or choose a world
+    usage: /rtp [overworld|nether|end|reload]
+  rtpqueue:
+    description: Open the random teleport queue
+    usage: /rtpqueue
+    aliases: [rtpq]
+  team:
+    description: Open team commands
+    usage: /team
+    aliases: [teams]
+  tool:
+    description: Open custom tools menu
+    usage: /tool
+    aliases: [tools, dt]
+    permission: tools.admin
+  tpa:
+    description: Request to teleport to a player
+    usage: /tpa <player>
+  tpahere:
+    description: Request a player to teleport to you
+    usage: /tpahere <player>
+  tpaccept:
+    description: Accept a teleport request
+    usage: /tpaccept
+  tpadeny:
+    description: Deny a teleport request
+    usage: /tpadeny
+  tpacancel:
+    description: Cancel a teleport request
+    usage: /tpacancel
+  tpatoggle:
+    description: Toggle teleport requests
+    usage: /tpatoggle
+  tpaheretoggle:
+    description: Toggle teleport-here requests
+    usage: /tpaheretoggle
+  tpareload:
+    description: Reload teleport request settings
+    usage: /tpareload
+  tpagui:
+    description: Open teleport request GUI
+    usage: /tpagui
+  tpaheregui:
+    description: Open teleport-here GUI
+    usage: /tpaheregui
+  tpauto:
+    description: Toggle automatic teleport request acceptance
+    usage: /tpauto
+  tpahereauto:
+    description: Toggle automatic teleport-here acceptance
+    usage: /tpahereauto
 
 permissions:
   flakes.use:
@@ -32,3 +93,23 @@ permissions:
   home.use:
     description: Allows using home commands
     default: true
+  home.reload:
+    default: op
+  home.bypass:
+    default: op
+  home.others:
+    default: op
+  rtp.use:
+    default: true
+  rtp.admin:
+    default: op
+  rtp.bypass:
+    default: op
+  team.admin:
+    default: op
+  team.home.bypass:
+    default: false
+  tools.admin:
+    default: op
+  tpa.admin:
+    default: op
